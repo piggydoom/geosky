@@ -19,13 +19,16 @@ public class home {
         App.setRoot("flashcards");
     }
 
-    public class FlagCountry {
+    public static class FlagCountry {
         public String capital;
         public String area;
         public String pop;
-        public Integer index;
+        public String index; // 2. Changed to String to match "fr" in your JSON
 
-        public FlagCountry(String capital, String area, String pop, Integer index) {
+        // 3. Added empty constructor for Jackson
+        public FlagCountry() {}
+
+        public FlagCountry(String capital, String area, String pop, String index) {
             this.capital = capital;
             this.area = area;
             this.pop = pop;
@@ -61,3 +64,4 @@ public class home {
     }
 
 }
+
