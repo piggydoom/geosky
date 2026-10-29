@@ -1,18 +1,63 @@
 package com.piggydoom;
 
+import java.io.File;
 import java.io.IOException;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 
 public class home {
 
     @FXML
     public Button hbFlashcards;
-    
+
     @FXML
-    private void toGame(String gameFXML) throws IOException {
-        App.setRoot(gameFXML);
+    public void toFlashcards() throws IOException {
+        App.setRoot("flashcards");
     }
 
-    
+    public class FlagCountry {
+        public String capital;
+        public String area;
+        public String pop;
+        public Integer index;
+
+        public FlagCountry(String capital, String area, String pop, Integer index) {
+            this.capital = capital;
+            this.area = area;
+            this.pop = pop;
+            this.index = index;
+        }
+    }
+
+    public Image adF = new Image(getClass().getResource("/com/piggydoom/flags/ad.png").toExternalForm());
+
+    // to consider; do i import all at once or on the spot?
+
+    // the plan;
+    // two or maybe more custom class arrays for countries and territories as to
+    // have specialised stats, so you dont have "date of independence" for a state
+    // that isnt independant
+    // this immediantly makes sorting through single categories easier.
+    // to give an equal chance for multi-category, either literally pick a random
+    // one of the files from the flags folder, or
+    // have an ultra-simple array of JUST the country/region indexs and pick from
+    // that. or maybe even just pick a random number
+    // from 1-however many files there are and include a total index value that is
+    // consistent among both or more custom class arrays
+
+    public void initialize() {
+        System.out.println("france JSON");
+
+        ObjectMapper objectMapper = new ObjectMapper();
+
+        File file = new File("data/geoData.json");
+
+        FlagCountry france = objectMapper.readValue(file, FlagCountry.class);
+
+    }
+
 }
