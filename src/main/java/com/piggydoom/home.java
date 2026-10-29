@@ -19,6 +19,8 @@ public class home {
         App.setRoot("flashcards");
     }
 
+    File geoData = new File("src\\main\\resources\\com\\piggydoom\\geoData.json");
+
     public static class FlagCountry {
         public String capital;
         public String area;
@@ -57,9 +59,21 @@ public class home {
 
         ObjectMapper objectMapper = new ObjectMapper();
 
-        File file = new File("data/geoData.json");
+        
+        //how do you read an object from a JSON file without reading the entire JSON file, like just grab the one
+        try {
+            FlagCountry france = objectMapper.readValue(geoData, FlagCountry.class);
+            System.out.println("Capital: " + france.capital);
+            System.out.println("Area: " + france.area);
+            System.out.println("Population: " + france.pop);
+            System.out.println("Index: " + france.index);
+        } catch (IOException e) {
+            throw new RuntimeException("Could not read country data", e);
+        }
 
-        FlagCountry france = objectMapper.readValue(file, FlagCountry.class);
+    }
+
+    public void getRandomCT(boolean Countries, boolean territories){
 
     }
 
