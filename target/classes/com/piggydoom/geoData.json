@@ -1,20 +1,644 @@
 [
     {
-        "index": "fr",
-        "capital": "Paris",
-        "area": "100",
-        "pop": "60.000.000"
+        "index": "af",
+        "type": 1,
+        "capital": "Kabul",
+        "area": "652,860 km²",
+        "pop": "~45,000,000 [mid 2026]",
+        "desc": "east asian recognized country"
+    },
+    {
+        "index": "ax",
+        "type": 2,
+        "capital": "Marihamn",
+        "area": "1,580 km²",
+        "pop": "~30,100",
+        "desc": "self governing territory of Finland"
+    },
+    {
+        "index": "al",
+        "type": 1,
+        "capital": "Tirana",
+        "area": "28,750 km²",
+        "pop": "~2,350,000",
+        "desc": "balkan country"
+    },
+
+    {
+        "index": "dz",
+        "type": 1,
+        "capital": "Algiers",
+        "area": "2,381,740 km²",
+        "pop": "~47,435,000",
+        "desc": "north african country"
+    },
+    {
+        "index": "as",
+        "type": 2,
+        "capital": "Pago Pago",
+        "area": "199 km²",
+        "pop": "~46,029",
+        "desc": "self governing territory of the U.S.A"
+    },
+    {
+        "index": "ad",
+        "type": 1,
+        "capital": "Andorra la Vella",
+        "area": "470 km²",
+        "pop": "~82,904",
+        "desc": ""
+    },
+    {
+        "index": "ao",
+        "type": 1,
+        "capital": "Luanda",
+        "area": "1,246,700 km²",
+        "pop": "~39,040,000",
+        "desc": "north african country"
+    },
+    {
+        "index": "ai",
+        "type": 2,
+        "capital": "The Valley",
+        "area": "96 km²",
+        "pop": "~15,753",
+        "desc": "self governing territory of the U.K"
+    },
+    {
+        "index": "aq",
+        "type": 4,
+        "capital": "none",
+        "area": "14,200,000 km²",
+        "pop": "uninhabited",
+        "desc": "foreign administered territory"
+    },
+    {
+        "index": "ag",
+        "type": 1,
+        "capital": "Saint John's",
+        "area": "440 km²",
+        "pop": "~94,209",
+        "desc": ""
+    },
+    {
+        "index": "ar",
+        "type": 1,
+        "capital": "Buenos Aires",
+        "area": "2,780,400 km²",
+        "pop": "~45,851,000",
+        "desc": ""
+    },
+    {
+        "index": "am",
+        "type": 1,
+        "capital": "Yerevan",
+        "area": "29,740 km²",
+        "pop": "~3,087,000",
+        "desc": "x"
+    },
+    {
+        "index": "aw",
+        "type": 2,
+        "capital": "Oranjestad",
+        "area": "179 km²",
+        "pop": "~108,785",
+        "desc": "self governing territory of the netherlands"
     },
     {
         "index": "au",
+        "type": 1,
         "capital": "Canberra",
-        "area": "100",
-        "pop": "30.000.000"
+        "area": "7,741,220 km²",
+        "pop": "~27,614,000",
+        "desc": ""
     },
     {
-        "index": "nz",
-        "capital": "Wellington",
-        "area": "100",
-        "pop": "15.000.000"
-    }
+        "index": "at",
+        "type": 1,
+        "capital": "Vienna",
+        "area": "83,879 km²",
+        "pop": "~9,208,000",
+        "desc": "x"
+    },
+    {
+        "index": "az",
+        "type": 1,
+        "capital": "Baku",
+        "area": "86,600 km²",
+        "pop": "~20,247,000",
+        "desc": "x"
+    },
+    {
+        "index": "bs",
+        "type": 1,
+        "capital": "Nassau",
+        "area": "13,878 km²",
+        "pop": "~403,033",
+        "desc": ""
+    },
+    {
+        "index": "bh",
+        "type": 1,
+        "capital": "Manama",
+        "area": "778 km²",
+        "pop": "~1,600,000",
+        "desc": "x"
+    },
+    {
+        "index": "bd",
+        "type": 1,
+        "capital": "Dhaka",
+        "area": "147,630 km²",
+        "pop": "~175,687,000",
+        "desc": "x"
+    },
+    {
+        "index": "bb",
+        "type": 1,
+        "capital": "Bridgetown",
+        "area": "430 km²",
+        "pop": "~282,000",
+        "desc": "x"
+    },
+    {
+        "index": "by",
+        "type": 1,
+        "capital": "Minsk",
+        "area": "207,600 km²",
+        "pop": "~9,086,000",
+        "desc": "x"
+    },
+    {
+        "index": "be",
+        "type": 1,
+        "capital": "Brussels",
+        "area": "30,530 km²",
+        "pop": "~11,942,000",
+        "desc": "x"
+    },
+    {
+        "index": "bz",
+        "type": 1,
+        "capital": "Belmopan",
+        "area": "22,970 km²",
+        "pop": "~422,924",
+        "desc": "x"
+    },
+    {
+        "index": "bj",
+        "type": 1,
+        "capital": "Porto-Novo",
+        "area": "114,760 km²",
+        "pop": "~14,814,000",
+        "desc": "x"
+    },
+    {
+        "index": "bm",
+        "type": 2,
+        "capital": "Hamilton",
+        "area": "53 km²",
+        "pop": "~64,555",
+        "desc": "self governing territory of the U.K"
+    },
+    {
+        "index": "bt",
+        "type": 1,
+        "capital": "Thimphu",
+        "area": "38,394 km²",
+        "pop": "~796,682",
+        "desc": "x"
+    },
+    {
+        "index": "bo",
+        "type": 1,
+        "capital": "Sucre",
+        "area": "1,098,580 km²",
+        "pop": "~12,582,000",
+        "desc": "x"
+    },
+    {
+        "index": "bq-b",
+        "type": 2,
+        "capital": "Kralendijk",
+        "area": "322 km²",
+        "pop": "~27,726",
+        "desc": "self governing territory of the netherlands"
+    },
+    {
+        "index": "bq-se",
+        "type": 2,
+        "capital": "Oranjestad",
+        "area": "31 km²",
+        "pop": "~3,138",
+        "desc": "x"
+    },
+    {
+        "index": "bq-s",
+        "type": 2,
+        "capital": "The Bottom",
+        "area": "13 km²",
+        "pop": "~1,915",
+        "desc": "x"
+    },
+    {
+        "index": "ba",
+        "type": 1,
+        "capital": "Sarajevo",
+        "area": "51,210 km²",
+        "pop": "~3,140,000",
+        "desc": "x"
+    },
+    {
+        "index": "bw",
+        "type": 1,
+        "capital": "Gaborone",
+        "area": "581,730 km²",
+        "pop": "~2,562,000",
+        "desc": "x"
+    },
+    {
+        "index": "bv",
+        "type": "x",
+        "capital": "x",
+        "area": "x km²",
+        "pop": "~x",
+        "desc": "x"
+    },
+    {
+        "index": "br",
+        "type": 1,
+        "capital": "Brasilla",
+        "area": "8,515,770 km²",
+        "pop": "~212,812,000",
+        "desc": "x"
+    },
+    {
+        "index": "io",
+        "type": "2",
+        "capital": "Diego Garcia",
+        "area": "63 km²",
+        "pop": "~4,000",
+        "desc": "self governing territory of the U.K"
+    },
+    {
+        "index": "bn",
+        "type": "1",
+        "capital": "Bandar Seri Begawan",
+        "area": "5,770 km²",
+        "pop": "~466,330",
+        "desc": ""
+    },
+    {
+        "index": "bg",
+        "type": "1",
+        "capital": "Sofia",
+        "area": "111,000 km²",
+        "pop": "~6,433,000",
+        "desc": "x"
+    },
+    {
+        "index": "bf",
+        "type": "1",
+        "capital": "Ouagadougou",
+        "area": "274,220 km²",
+        "pop": "~24,075,000",
+        "desc": "x"
+    },
+    {
+        "index": "bi",
+        "type": "1",
+        "capital": "Gitega",
+        "area": "27,830 km²",
+        "pop": "~14,390,000",
+        "desc": "x"
+    },
+    {
+        "index": "cv",
+        "type": "1",
+        "capital": "praia",
+        "area": "4,030 km²",
+        "pop": "~527,326",
+        "desc": ""
+    },
+    {
+        "index": "kh",
+        "type": "1",
+        "capital": "Phnom Penh",
+        "area": "181,040 km²",
+        "pop": "~17,848,000",
+        "desc": "x"
+    },
+    {
+        "index": "cm",
+        "type": "1",
+        "capital": "Yaounde",
+        "area": "475,440 km²",
+        "pop": "~29,879,000",
+        "desc": "x"
+    },
+    {
+        "index": "ca",
+        "type": "1",
+        "capital": "Ottowa",
+        "area": "9,984,670 km²",
+        "pop": "~41,652,000",
+        "desc": "x"
+    },
+    {
+        "index": "ky",
+        "type": "2",
+        "capital": "George Town",
+        "area": "264 km²",
+        "pop": "~75,844",
+        "desc": "self governing territory of the U.K"
+    },
+    {
+        "index": "cf",
+        "type": "1",
+        "capital": "Bangui",
+        "area": "622,980 km²",
+        "pop": "~5,513,000",
+        "desc": "x"
+    },
+    {
+        "index": "td",
+        "type": "1",
+        "capital": "N'Djamena",
+        "area": "1,284,000 km²",
+        "pop": "~21,004,000",
+        "desc": "x"
+    },
+    {
+        "index": "cl",
+        "type": "1",
+        "capital": "Santiago",
+        "area": "756,700 km²",
+        "pop": "~19,860,000",
+        "desc": "x"
+    },
+    {
+        "index": "cn",
+        "type": "1",
+        "capital": "Beijing",
+        "area": "9,562,910 km²",
+        "pop": "~1,406,585,000",
+        "desc": "x"
+    },
+    {
+        "index": "cx",
+        "type": "2",
+        "capital": "Flying Fish Cove",
+        "area": "135 km²",
+        "pop": "~1,613",
+        "desc": "territory of Australia"
+    },
+    {
+        "index": "cc",
+        "type": "2",
+        "capital": "no real capital",
+        "area": "14 km²",
+        "pop": "~593",
+        "desc": "territory of Australia"
+    },
+    {
+        "index": "co",
+        "type": "1",
+        "capital": "Bogota",
+        "area": "1,141,749 km²",
+        "pop": "~53,426,000",
+        "desc": "x"
+    },
+    {
+        "index": "km",
+        "type": "1",
+        "capital": "Moroni",
+        "area": "1,861 km²",
+        "pop": "~882,847",
+        "desc": "x"
+    },
+    {
+        "index": "cd",
+        "type": "1",
+        "capital": "Kinshasa",
+        "area": "2,344,860 km²",
+        "pop": "~112,832,000",
+        "desc": "x"
+    },
+    {
+        "index": "cg",
+        "type": "1",
+        "capital": "Brazzaville",
+        "area": "342,000 km²",
+        "pop": "~6,484,000",
+        "desc": "x"
+    },
+    {
+        "index": "ck",
+        "type": "3",
+        "capital": "x",
+        "area": "242 km²",
+        "pop": "~15,040",
+        "desc": "disputed country status, though originated as a territory of New Zealand"
+    },
+    {
+        "index": "cr",
+        "type": "1",
+        "capital": "San José",
+        "area": "51,100 km²",
+        "pop": "~5,153,000",
+        "desc": "x"
+    },
+    {
+        "index": "ci",
+        "type": "1",
+        "capital": "Yamoussoukro",
+        "area": "322,460 km²",
+        "pop": "~32,712,000",
+        "desc": "x"
+    },
+    {
+        "index": "hr",
+        "type": "1",
+        "capital": "Zagreb",
+        "area": "59,590 km²",
+        "pop": "~3,876,000",
+        "desc": "x"
+    },
+    {
+        "index": "cu",
+        "type": "1",
+        "capital": "Havana",
+        "area": "109,880 km²",
+        "pop": "~10,937,000",
+        "desc": "x"
+    },
+    {
+        "index": "cw",
+        "type": "2",
+        "capital": "Willemstad",
+        "area": "444 km²",
+        "pop": "~156,263",
+        "desc": "self governing territory of the netherlands"
+    },
+    {
+        "index": "cy",
+        "type": "1",
+        "capital": "Nicosia",
+        "area": "9,250 km²",
+        "pop": "~1,371,000",
+        "desc": "x"
+    },
+    {
+        "index": "cz",
+        "type": "1",
+        "capital": "Prague",
+        "area": "78,870 km²",
+        "pop": "~10,887,000",
+        "desc": "x"
+    },
+    {
+        "index": "dk",
+        "type": "1",
+        "capital": "Copenhagen",
+        "area": "42,920 km²",
+        "pop": "~6,009,000",
+        "desc": "x"
+    },
+    {
+        "index": "dj",
+        "type": "1",
+        "capital": "Djibouti City",
+        "area": "23,200 km²",
+        "pop": "~1,184,000",
+        "desc": "x"
+    },
+    {
+        "index": "dm",
+        "type": "1",
+        "capital": "Roseau",
+        "area": "750 km²",
+        "pop": "~65,871",
+        "desc": "x"
+    },
+    {
+        "index": "do",
+        "type": "1",
+        "capital": "Santo Domingo",
+        "area": "48,670 km²",
+        "pop": "~11,520,000",
+        "desc": "x"
+    },
+    {
+        "index": "ec",
+        "type": "1",
+        "capital": "Quito",
+        "area": "256,370 km²",
+        "pop": "~18,290,000",
+        "desc": "x"
+    },
+    {
+        "index": "eg",
+        "type": "1",
+        "capital": "Cairo",
+        "area": "1,001,450 km²",
+        "pop": "~118,366,000",
+        "desc": "x"
+    },
+    {
+        "index": "sv",
+        "type": "1",
+        "capital": "San Salvador",
+        "area": "21,040 km²",
+        "pop": "~6,366,000",
+        "desc": "x"
+    },
+    {
+        "index": "gq",
+        "type": "1",
+        "capital": "Malabo",
+        "area": "28,050 km²",
+        "pop": "~1,938,000",
+        "desc": "x"
+    },
+    {
+        "index": "er",
+        "type": "1",
+        "capital": "Asmara",
+        "area": "117,600 km²",
+        "pop": "~3,607,000",
+        "desc": "x"
+    },
+    {
+        "index": "ee",
+        "type": "1",
+        "capital": "Tallinn",
+        "area": "45,340 km²",
+        "pop": "~1,366,000",
+        "desc": "x"
+    },
+    {
+        "index": "sz",
+        "type": "1",
+        "capital": "Mbabane",
+        "area": "17,360 km²",
+        "pop": "~1,256,000",
+        "desc": "x"
+    },
+    {
+        "index": "bv",
+        "type": "x",
+        "capital": "x",
+        "area": "x km²",
+        "pop": "~x",
+        "desc": "x"
+    },
+    {
+        "index": "bv",
+        "type": "x",
+        "capital": "x",
+        "area": "x km²",
+        "pop": "~x",
+        "desc": "x"
+    },
+    {
+        "index": "bv",
+        "type": "x",
+        "capital": "x",
+        "area": "x km²",
+        "pop": "~x",
+        "desc": "x"
+    },
+    {
+        "index": "bv",
+        "type": "x",
+        "capital": "x",
+        "area": "x km²",
+        "pop": "~x",
+        "desc": "x"
+    },
+    {
+        "index": "bv",
+        "type": "x",
+        "capital": "x",
+        "area": "x km²",
+        "pop": "~x",
+        "desc": "x"
+    },
+    {
+        "index": "bv",
+        "type": "x",
+        "capital": "x",
+        "area": "x km²",
+        "pop": "~x",
+        "desc": "x"
+    },
+    {
+        "index": "bv",
+        "type": "x",
+        "capital": "x",
+        "area": "x km²",
+        "pop": "~x",
+        "desc": "x"
+    },
+    
 ]

@@ -36,3 +36,16 @@ public class App extends Application {
     }
 
 }
+
+// to consider; do i import all at once or on the spot?
+
+    // two or maybe more custom class arrays for countries and territories as to
+    // have specialised stats, so you dont have "date of independence" for a state
+    // that isnt independant
+    // this immediantly makes sorting through single categories easier.
+    // to give an equal chance for multi-category, either literally pick a random
+    // one of the files from the flags folder, or
+    // have an ultra-simple array of JUST the country/region indexs and pick from
+    // that. or maybe even just pick a random number
+    // from 1-however many files there are and include a total index value that is
+    // consistent among both or more custom class arrays

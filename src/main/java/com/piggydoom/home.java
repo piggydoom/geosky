@@ -24,62 +24,56 @@ public class home {
 
     File geoData = new File("src\\main\\resources\\com\\piggydoom\\geoData.json");
 
-    public static class FlagCorT {
+    public static class CorT {
+        public Integer type;
         public String index;
         public String capital;
         public String area;
         public String pop;
+        public String desc;
 
-        public FlagCorT() {
+        //"type"
+        //1- country recognised by the U.N
+        //2- territory
+        //3- disputed
+        //4- other
+
+        public CorT() {
         }
 
-        public FlagCorT(String index, String capital, String area, String pop) {
+        public CorT(String index, Integer type, String capital, String area, String pop, String desc) {
             this.index = index;
+            this.type = type;
             this.capital = capital;
             this.area = area;
             this.pop = pop;
+            this.desc = desc;
         }
     }
 
     public Image adF = new Image(getClass().getResource("/com/piggydoom/flags/ad.png").toExternalForm());
 
-    // to consider; do i import all at once or on the spot?
-
-    // two or maybe more custom class arrays for countries and territories as to
-    // have specialised stats, so you dont have "date of independence" for a state
-    // that isnt independant
-    // this immediantly makes sorting through single categories easier.
-    // to give an equal chance for multi-category, either literally pick a random
-    // one of the files from the flags folder, or
-    // have an ultra-simple array of JUST the country/region indexs and pick from
-    // that. or maybe even just pick a random number
-    // from 1-however many files there are and include a total index value that is
-    // consistent among both or more custom class arrays
-
     public void initialize() {
- 
     }
 
-    @FXML 
-    public void testCountry(){
-        
-                   FlagCorT fr = getCorT("fr");
+    @FXML
+    public void testCountry() {
+        CorT fr = getCorT("fr");
         // System.out.println(getCorT("fr").index);
         System.out.println(fr.capital);
         System.out.println(fr.pop);
     }
-    public FlagCorT getCorT(String index) {
+
+    public CorT getCorT(String index) {
         ObjectMapper objectMapper = new ObjectMapper();
 
-        // how do you read an object from a JSON file without reading the entire JSON
-        // file, like just grab the one
         try {
-            List<FlagCorT> totalList = objectMapper.readValue(geoData, new TypeReference<List<FlagCorT>>() {
+            List<CorT> totalList = objectMapper.readValue(geoData, new TypeReference<List<CorT>>() {
             });
 
-            Optional<FlagCorT> selIndex = totalList.stream()
-            .filter(user -> user.index == index)
-            .findFirst();
+            Optional<CorT> selIndex = totalList.stream()
+                    .filter(user -> user.index.equals(index))
+                    .findFirst();
             return selIndex.orElse(null);
         } catch (IOException e) {
             throw new RuntimeException("Could not read country data", e);
