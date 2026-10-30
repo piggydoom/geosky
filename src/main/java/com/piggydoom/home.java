@@ -2,7 +2,10 @@ package com.piggydoom;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
+import java.util.Optional;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import javafx.fxml.FXML;
@@ -21,20 +24,20 @@ public class home {
 
     File geoData = new File("src\\main\\resources\\com\\piggydoom\\geoData.json");
 
-    public static class FlagCountry {
+    public static class FlagCorT {
+        public String index;
         public String capital;
         public String area;
         public String pop;
-        public String index; // 2. Changed to String to match "fr" in your JSON
 
-        // 3. Added empty constructor for Jackson
-        public FlagCountry() {}
+        public FlagCorT() {
+        }
 
-        public FlagCountry(String capital, String area, String pop, String index) {
+        public FlagCorT(String index, String capital, String area, String pop) {
+            this.index = index;
             this.capital = capital;
             this.area = area;
             this.pop = pop;
-            this.index = index;
         }
     }
 
@@ -42,7 +45,6 @@ public class home {
 
     // to consider; do i import all at once or on the spot?
 
-    // the plan;
     // two or maybe more custom class arrays for countries and territories as to
     // have specialised stats, so you dont have "date of independence" for a state
     // that isnt independant
@@ -55,27 +57,33 @@ public class home {
     // consistent among both or more custom class arrays
 
     public void initialize() {
-        System.out.println("france JSON");
+ 
+    }
 
+    @FXML 
+    public void testCountry(){
+        
+                   FlagCorT fr = getCorT("fr");
+        // System.out.println(getCorT("fr").index);
+        System.out.println(fr.capital);
+        System.out.println(fr.pop);
+    }
+    public FlagCorT getCorT(String index) {
         ObjectMapper objectMapper = new ObjectMapper();
 
-        
-        //how do you read an object from a JSON file without reading the entire JSON file, like just grab the one
+        // how do you read an object from a JSON file without reading the entire JSON
+        // file, like just grab the one
         try {
-            FlagCountry france = objectMapper.readValue(geoData, FlagCountry.class);
-            System.out.println("Capital: " + france.capital);
-            System.out.println("Area: " + france.area);
-            System.out.println("Population: " + france.pop);
-            System.out.println("Index: " + france.index);
+            List<FlagCorT> totalList = objectMapper.readValue(geoData, new TypeReference<List<FlagCorT>>() {
+            });
+
+            Optional<FlagCorT> selIndex = totalList.stream()
+            .filter(user -> user.index == index)
+            .findFirst();
+            return selIndex.orElse(null);
         } catch (IOException e) {
             throw new RuntimeException("Could not read country data", e);
         }
-
-    }
-
-    public void getRandomCT(boolean Countries, boolean territories){
-
     }
 
 }
-

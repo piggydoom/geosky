@@ -1,20 +1,20 @@
 [
     {
+        "index": "fr",
         "capital": "Paris",
         "area": "100",
-        "pop": "60.000.000",
-        "index": "fr"
+        "pop": "60.000.000"
     },
     {
+        "index": "au",
         "capital": "Canberra",
         "area": "100",
-        "pop": "30.000.000",
-        "index": "au"
+        "pop": "30.000.000"
     },
     {
+        "index": "nz",
         "capital": "Wellington",
         "area": "100",
-        "pop": "15.000.000",
-        "index": "nz"
+        "pop": "15.000.000"
     }
 ]

@@ -13,6 +13,7 @@
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
          <children>
             <Label text="GEOSKY" />
+            <Button layoutX="124.0" layoutY="5.0" mnemonicParsing="false" onAction="#testCountry" text="test" />
          </children></AnchorPane>
     <GridPane prefHeight="353.0" prefWidth="600.0">
               <columnConstraints>
