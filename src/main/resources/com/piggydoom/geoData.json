@@ -585,60 +585,60 @@
         "desc": "x"
     },
     {
-        "index": "bv",
-        "type": "x",
-        "capital": "x",
-        "area": "x km²",
-        "pop": "~x",
+        "index": "et",
+        "type": "1",
+        "capital": "Addis Ababa",
+        "area": "1,104,300 km²",
+        "pop": "~135,472,000",
         "desc": "x"
     },
     {
-        "index": "bv",
-        "type": "x",
-        "capital": "x",
-        "area": "x km²",
-        "pop": "~x",
+        "index": "fk",
+        "type": "2",
+        "capital": "Stanley",
+        "area": "12,173 km²",
+        "pop": "~3,662",
         "desc": "x"
     },
     {
-        "index": "bv",
-        "type": "x",
-        "capital": "x",
-        "area": "x km²",
-        "pop": "~x",
+        "index": "fo",
+        "type": "2",
+        "capital": "Tórshavn",
+        "area": "1,396 km²",
+        "pop": "~54,900",
+        "desc": "territory of Denmark"
+    },
+    {
+        "index": "fj",
+        "type": "1",
+        "capital": "Suva",
+        "area": "18,270 km²",
+        "pop": "~933,154",
         "desc": "x"
     },
     {
-        "index": "bv",
-        "type": "x",
-        "capital": "x",
-        "area": "x km²",
-        "pop": "~x",
+        "index": "fi",
+        "type": "1",
+        "capital": "Helsinki",
+        "area": "338,450 km²",
+        "pop": "~5,646,000",
         "desc": "x"
     },
     {
-        "index": "bv",
-        "type": "x",
-        "capital": "x",
-        "area": "x km²",
-        "pop": "~x",
+        "index": "fr",
+        "type": "1",
+        "capital": "Paris",
+        "area": "549,087 km²",
+        "pop": "~68,720,000",
         "desc": "x"
     },
     {
-        "index": "bv",
-        "type": "x",
-        "capital": "x",
-        "area": "x km²",
-        "pop": "~x",
+        "index": "gf",
+        "type": "2",
+        "capital": "Cayenne",
+        "area": "83,534 km²",
+        "pop": "~295,385",
         "desc": "x"
-    },
-    {
-        "index": "bv",
-        "type": "x",
-        "capital": "x",
-        "area": "x km²",
-        "pop": "~x",
-        "desc": "x"
-    },
+    }
     
 ]
