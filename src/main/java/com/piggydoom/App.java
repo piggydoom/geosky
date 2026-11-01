@@ -37,15 +37,20 @@ public class App extends Application {
 
 }
 
-// to consider; do i import all at once or on the spot?
+// NOTES
 
-    // two or maybe more custom class arrays for countries and territories as to
-    // have specialised stats, so you dont have "date of independence" for a state
-    // that isnt independant
-    // this immediantly makes sorting through single categories easier.
-    // to give an equal chance for multi-category, either literally pick a random
-    // one of the files from the flags folder, or
-    // have an ultra-simple array of JUST the country/region indexs and pick from
-    // that. or maybe even just pick a random number
-    // from 1-however many files there are and include a total index value that is
-    // consistent among both or more custom class arrays
+// "type"
+// 1- country, recognised by the U.N
+// 2- territory, autonomous or not
+// 3- disputed, overly conflicting classifications among organizations 
+// 4- other, really just antarctica
+
+// current decision and plan as for the sorting----
+// a) pre-cached lists. make 3 lists, 1 for type 1, 2 for type 2, and 3 for
+// total. i will simplify the types as to
+// only need the 3, ie. type 2, 3, and 4, will be merged into territories/other.
+// if one is really indecisive just
+// make it a setting like a lazy cunt. note that the type merging is purely for
+// the sorting side, the JSON file will
+// still have type 2,3,4 as seperates, but the lists will be simplified to (1)
+// and (2/3/4).

@@ -258,7 +258,7 @@
     },
     {
         "index": "bv",
-        "type": "x",
+        "type": "4",
         "capital": "x",
         "area": "x km²",
         "pop": "~x",
@@ -639,6 +639,85 @@
         "area": "83,534 km²",
         "pop": "~295,385",
         "desc": "territory of France"
+    },
+    {
+        "index": "pf",
+        "type": "2",
+        "capital": "Papeete",
+        "area": "2,000 km²",
+        "pop": "~282,465",
+        "desc": "territory of France"
+    },
+    {
+        "index": "tf",
+        "type": "2",
+        "capital": "x",
+        "area": "439,676 km²",
+        "pop": "uninhabited",
+        "desc": "territory of France"
+    },
+    {
+        "index": "ga",
+        "type": "1",
+        "capital": "Libreville",
+        "area": "267,670 km²",
+        "pop": "2,593,000",
+        "desc": ""
+    }, 
+    {
+        "index": "gm",
+        "type": "1",
+        "capital": "Bangjul",
+        "area": "11,300 km²",
+        "pop": "2,822,000",
+        "desc": ""
+    },
+    {
+        "index": "ge",
+        "type": "1",
+        "capital": "Tbilisi",
+        "area": "69,700 km²",
+        "pop": "3,936,000",
+        "desc": ""
+    },
+    {
+        "index": "de",
+        "type": "1",
+        "capital": "Berlin",
+        "area": "357,580 km²",
+        "pop": "83,491,000",
+        "desc": ""
+    },
+    {
+        "index": "gh",
+        "type": "1",
+        "capital": "Accra",
+        "area": "238,540 km²",
+        "pop": "35,064,000",
+        "desc": ""
+    },
+    {
+        "index": "gi",
+        "type": "2",
+        "capital": "Gibraltar",
+        "area": "6.8 km²",
+        "pop": "40,126",
+        "desc": "territory of the U.K"
+    },
+    {
+        "index": "gr",
+        "type": "1",
+        "capital": "Athens",
+        "area": "131,960 km²",
+        "pop": "10,414,000",
+        "desc": ""
+    },
+    {
+        "index": "gl",
+        "type": "2",
+        "capital": "Nuuk",
+        "area": "2,166,086 km²",
+        "pop": "56,831",
+        "desc": "territory of Denmark"
     }
-    
 ]

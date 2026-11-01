@@ -20,7 +20,7 @@ public class flashcards {
        
 
     private void nextFlag(){
-        // flashcardsIV.setImage(adF);
+        home.CorT currentFC = home.getCorT("fr");
     }
 
     public void initialize(){
