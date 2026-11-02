@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.concurrent.ThreadLocalRandom;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -29,8 +30,9 @@ public class home {
     public static final File geoData = new File("src\\main\\resources\\com\\piggydoom\\geoData.json");
 
     public static class CorT {
-        public Integer type;
         public String index;
+        public Integer type;
+        public String name;
         public String capital;
         public String area;
         public String pop;
@@ -39,9 +41,11 @@ public class home {
         public CorT() {
         }
 
-        public CorT(String index, Integer type, String capital, String area, String pop, String desc) {
+        public CorT(String index, Integer type, String name, String capital, String area, String pop, String desc) {
+
             this.index = index;
             this.type = type;
+            this.name = name;
             this.capital = capital;
             this.area = area;
             this.pop = pop;
@@ -49,9 +53,9 @@ public class home {
         }
     }
 
-    ObservableList<CorT> totalCorTs = FXCollections.observableArrayList();
-    ObservableList<CorT> t1CorTs = FXCollections.observableArrayList();
-    ObservableList<CorT> t234CorTs = FXCollections.observableArrayList();
+    public static ObservableList<CorT> totalCorTs = FXCollections.observableArrayList();
+    public static ObservableList<CorT> t1CorTs = FXCollections.observableArrayList();
+    public static ObservableList<CorT> t234CorTs = FXCollections.observableArrayList();
 
     public void initialize() {
         // pre-sort JSON objs by type.
@@ -101,4 +105,11 @@ public class home {
         }
     }
 
+    // public static CorT getRandCorT(Integer type){
+    // ThreadLocalRandom.current().nextInt(0, home.totalCorTs.size() + 1);
+    // }
+    public static Image returnCorTImg(String index) {
+        Image flag = new Image(home.class.getResource("/com/piggydoom/flags/" + index + ".png").toExternalForm());
+        return flag;
+    }
 }

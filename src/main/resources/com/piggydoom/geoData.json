@@ -2,6 +2,7 @@
     {
         "index": "af",
         "type": 1,
+        "name":"Afghanistan",
         "capital": "Kabul",
         "area": "652,860 km²",
         "pop": "~45,000,000 [mid 2026]",
@@ -10,6 +11,7 @@
     {
         "index": "ax",
         "type": 2,
+        "name":"Åland Islands ",
         "capital": "Marihamn",
         "area": "1,580 km²",
         "pop": "~30,100",
@@ -18,6 +20,7 @@
     {
         "index": "al",
         "type": 1,
+        "name":"Albania",
         "capital": "Tirana",
         "area": "28,750 km²",
         "pop": "~2,350,000",
@@ -27,6 +30,7 @@
     {
         "index": "dz",
         "type": 1,
+        "name":"Algeria",
         "capital": "Algiers",
         "area": "2,381,740 km²",
         "pop": "~47,435,000",
@@ -35,6 +39,7 @@
     {
         "index": "as",
         "type": 2,
+        "name":"American Samoa",
         "capital": "Pago Pago",
         "area": "199 km²",
         "pop": "~46,029",
@@ -43,6 +48,7 @@
     {
         "index": "ad",
         "type": 1,
+        "name":"Andorra",
         "capital": "Andorra la Vella",
         "area": "470 km²",
         "pop": "~82,904",
@@ -51,6 +57,7 @@
     {
         "index": "ao",
         "type": 1,
+        "name":"Angola",
         "capital": "Luanda",
         "area": "1,246,700 km²",
         "pop": "~39,040,000",
@@ -59,6 +66,7 @@
     {
         "index": "ai",
         "type": 2,
+        "name":"Anguilla",
         "capital": "The Valley",
         "area": "96 km²",
         "pop": "~15,753",
@@ -67,6 +75,7 @@
     {
         "index": "aq",
         "type": 4,
+        "name":"Antarctica",
         "capital": "none",
         "area": "14,200,000 km²",
         "pop": "uninhabited",
@@ -75,6 +84,7 @@
     {
         "index": "ag",
         "type": 1,
+        "name":"Antigua and Barbuda",
         "capital": "Saint John's",
         "area": "440 km²",
         "pop": "~94,209",
@@ -83,6 +93,7 @@
     {
         "index": "ar",
         "type": 1,
+        "name":"Argentina",
         "capital": "Buenos Aires",
         "area": "2,780,400 km²",
         "pop": "~45,851,000",
@@ -91,6 +102,7 @@
     {
         "index": "am",
         "type": 1,
+        "name":"Armenia",
         "capital": "Yerevan",
         "area": "29,740 km²",
         "pop": "~3,087,000",
@@ -99,6 +111,7 @@
     {
         "index": "aw",
         "type": 2,
+        "name":"Aruba",
         "capital": "Oranjestad",
         "area": "179 km²",
         "pop": "~108,785",
@@ -107,6 +120,7 @@
     {
         "index": "au",
         "type": 1,
+        "name":"Australia",
         "capital": "Canberra",
         "area": "7,741,220 km²",
         "pop": "~27,614,000",
@@ -115,6 +129,7 @@
     {
         "index": "at",
         "type": 1,
+        "name":"Austria",
         "capital": "Vienna",
         "area": "83,879 km²",
         "pop": "~9,208,000",
@@ -123,6 +138,7 @@
     {
         "index": "az",
         "type": 1,
+        "name":"Azerbaijan",
         "capital": "Baku",
         "area": "86,600 km²",
         "pop": "~20,247,000",
@@ -131,6 +147,7 @@
     {
         "index": "bs",
         "type": 1,
+        "name":"The Bahamas",
         "capital": "Nassau",
         "area": "13,878 km²",
         "pop": "~403,033",
@@ -139,6 +156,7 @@
     {
         "index": "bh",
         "type": 1,
+        "name":"Bahrain",
         "capital": "Manama",
         "area": "778 km²",
         "pop": "~1,600,000",
@@ -147,6 +165,7 @@
     {
         "index": "bd",
         "type": 1,
+        "name":"Bangladesh",
         "capital": "Dhaka",
         "area": "147,630 km²",
         "pop": "~175,687,000",
@@ -155,6 +174,7 @@
     {
         "index": "bb",
         "type": 1,
+        "name":"Barbados",
         "capital": "Bridgetown",
         "area": "430 km²",
         "pop": "~282,000",
@@ -163,6 +183,7 @@
     {
         "index": "by",
         "type": 1,
+        "name":"Belarus",
         "capital": "Minsk",
         "area": "207,600 km²",
         "pop": "~9,086,000",
@@ -171,6 +192,7 @@
     {
         "index": "be",
         "type": 1,
+        "name":"Belgium",
         "capital": "Brussels",
         "area": "30,530 km²",
         "pop": "~11,942,000",
@@ -179,6 +201,7 @@
     {
         "index": "bz",
         "type": 1,
+        "name":"Belize",
         "capital": "Belmopan",
         "area": "22,970 km²",
         "pop": "~422,924",
@@ -187,6 +210,7 @@
     {
         "index": "bj",
         "type": 1,
+        "name":"Benin",
         "capital": "Porto-Novo",
         "area": "114,760 km²",
         "pop": "~14,814,000",
@@ -195,6 +219,7 @@
     {
         "index": "bm",
         "type": 2,
+        "name":"Bermuda",
         "capital": "Hamilton",
         "area": "53 km²",
         "pop": "~64,555",
@@ -203,6 +228,7 @@
     {
         "index": "bt",
         "type": 1,
+        "name":"Bhutan",
         "capital": "Thimphu",
         "area": "38,394 km²",
         "pop": "~796,682",
@@ -211,6 +237,7 @@
     {
         "index": "bo",
         "type": 1,
+        "name":"Bolivia",
         "capital": "Sucre",
         "area": "1,098,580 km²",
         "pop": "~12,582,000",
@@ -219,6 +246,7 @@
     {
         "index": "bq-b",
         "type": 2,
+        "name":"Bonaire",
         "capital": "Kralendijk",
         "area": "322 km²",
         "pop": "~27,726",
@@ -227,6 +255,7 @@
     {
         "index": "bq-se",
         "type": 2,
+        "name":"Sint Eustatius",
         "capital": "Oranjestad",
         "area": "31 km²",
         "pop": "~3,138",
@@ -235,6 +264,7 @@
     {
         "index": "bq-s",
         "type": 2,
+        "name":"Saba",
         "capital": "The Bottom",
         "area": "13 km²",
         "pop": "~1,915",
@@ -243,6 +273,7 @@
     {
         "index": "ba",
         "type": 1,
+        "name":"Bosnia and Herzegovina",
         "capital": "Sarajevo",
         "area": "51,210 km²",
         "pop": "~3,140,000",
@@ -251,6 +282,7 @@
     {
         "index": "bw",
         "type": 1,
+        "name":"Botswana",
         "capital": "Gaborone",
         "area": "581,730 km²",
         "pop": "~2,562,000",
@@ -259,6 +291,7 @@
     {
         "index": "bv",
         "type": "4",
+        "name":"Bouvet Island",
         "capital": "x",
         "area": "x km²",
         "pop": "~x",
@@ -267,6 +300,7 @@
     {
         "index": "br",
         "type": 1,
+        "name":"Brazil",
         "capital": "Brasilla",
         "area": "8,515,770 km²",
         "pop": "~212,812,000",
@@ -275,6 +309,7 @@
     {
         "index": "io",
         "type": "2",
+        "name":"British Indian Ocean Territory",
         "capital": "Diego Garcia",
         "area": "63 km²",
         "pop": "~4,000",
@@ -283,6 +318,7 @@
     {
         "index": "bn",
         "type": "1",
+        "name":"Brunei Darussalam",
         "capital": "Bandar Seri Begawan",
         "area": "5,770 km²",
         "pop": "~466,330",
@@ -291,6 +327,7 @@
     {
         "index": "bg",
         "type": "1",
+        "name":"Bulgaria",
         "capital": "Sofia",
         "area": "111,000 km²",
         "pop": "~6,433,000",
@@ -299,6 +336,7 @@
     {
         "index": "bf",
         "type": "1",
+        "name":"Burkina-Faso",
         "capital": "Ouagadougou",
         "area": "274,220 km²",
         "pop": "~24,075,000",
@@ -307,6 +345,7 @@
     {
         "index": "bi",
         "type": "1",
+        "name":"Burundi",
         "capital": "Gitega",
         "area": "27,830 km²",
         "pop": "~14,390,000",
@@ -315,6 +354,7 @@
     {
         "index": "cv",
         "type": "1",
+        "name":"Cabo Verde",
         "capital": "praia",
         "area": "4,030 km²",
         "pop": "~527,326",
@@ -323,6 +363,7 @@
     {
         "index": "kh",
         "type": "1",
+        "name":"Cambodia",
         "capital": "Phnom Penh",
         "area": "181,040 km²",
         "pop": "~17,848,000",
@@ -331,6 +372,7 @@
     {
         "index": "cm",
         "type": "1",
+        "name":"Cameroon",
         "capital": "Yaounde",
         "area": "475,440 km²",
         "pop": "~29,879,000",
@@ -339,6 +381,7 @@
     {
         "index": "ca",
         "type": "1",
+        "name":"Canada",
         "capital": "Ottowa",
         "area": "9,984,670 km²",
         "pop": "~41,652,000",
@@ -347,6 +390,7 @@
     {
         "index": "ky",
         "type": "2",
+        "name":"Cayman Islands",
         "capital": "George Town",
         "area": "264 km²",
         "pop": "~75,844",
@@ -355,6 +399,7 @@
     {
         "index": "cf",
         "type": "1",
+        "name":"Central African Republic",
         "capital": "Bangui",
         "area": "622,980 km²",
         "pop": "~5,513,000",
@@ -363,6 +408,7 @@
     {
         "index": "td",
         "type": "1",
+        "name":"Chad",
         "capital": "N'Djamena",
         "area": "1,284,000 km²",
         "pop": "~21,004,000",
@@ -371,6 +417,7 @@
     {
         "index": "cl",
         "type": "1",
+        "name":"Chile",
         "capital": "Santiago",
         "area": "756,700 km²",
         "pop": "~19,860,000",
@@ -379,6 +426,7 @@
     {
         "index": "cn",
         "type": "1",
+        "name":"China",
         "capital": "Beijing",
         "area": "9,562,910 km²",
         "pop": "~1,406,585,000",
@@ -387,6 +435,7 @@
     {
         "index": "cx",
         "type": "2",
+        "name":"Christmas Island",
         "capital": "Flying Fish Cove",
         "area": "135 km²",
         "pop": "~1,613",
@@ -395,6 +444,7 @@
     {
         "index": "cc",
         "type": "2",
+        "name":"Cocos(Keeling) Islands",
         "capital": "no real capital",
         "area": "14 km²",
         "pop": "~593",
@@ -403,6 +453,7 @@
     {
         "index": "co",
         "type": "1",
+        "name":"Colombia",
         "capital": "Bogota",
         "area": "1,141,749 km²",
         "pop": "~53,426,000",
@@ -411,6 +462,7 @@
     {
         "index": "km",
         "type": "1",
+        "name":"Comoros",
         "capital": "Moroni",
         "area": "1,861 km²",
         "pop": "~882,847",
@@ -419,6 +471,7 @@
     {
         "index": "cd",
         "type": "1",
+        "name":"Democratic Republic of the Congo",
         "capital": "Kinshasa",
         "area": "2,344,860 km²",
         "pop": "~112,832,000",
@@ -427,6 +480,7 @@
     {
         "index": "cg",
         "type": "1",
+        "name":"Republic of the Congo",
         "capital": "Brazzaville",
         "area": "342,000 km²",
         "pop": "~6,484,000",
@@ -435,6 +489,7 @@
     {
         "index": "ck",
         "type": "3",
+        "name":"Cook Islands",
         "capital": "x",
         "area": "242 km²",
         "pop": "~15,040",
@@ -443,6 +498,7 @@
     {
         "index": "cr",
         "type": "1",
+        "name":"Costa Rica",
         "capital": "San José",
         "area": "51,100 km²",
         "pop": "~5,153,000",
@@ -451,6 +507,7 @@
     {
         "index": "ci",
         "type": "1",
+        "name":"Côte d'Ivoire",
         "capital": "Yamoussoukro",
         "area": "322,460 km²",
         "pop": "~32,712,000",
@@ -459,6 +516,7 @@
     {
         "index": "hr",
         "type": "1",
+        "name":"Croatia",
         "capital": "Zagreb",
         "area": "59,590 km²",
         "pop": "~3,876,000",
@@ -467,6 +525,7 @@
     {
         "index": "cu",
         "type": "1",
+        "name":"Cuba",
         "capital": "Havana",
         "area": "109,880 km²",
         "pop": "~10,937,000",
@@ -475,6 +534,7 @@
     {
         "index": "cw",
         "type": "2",
+        "name":"Curaçao",
         "capital": "Willemstad",
         "area": "444 km²",
         "pop": "~156,263",
@@ -483,6 +543,7 @@
     {
         "index": "cy",
         "type": "1",
+        "name":"Cypress",
         "capital": "Nicosia",
         "area": "9,250 km²",
         "pop": "~1,371,000",
@@ -491,6 +552,7 @@
     {
         "index": "cz",
         "type": "1",
+        "name":"Czechia",
         "capital": "Prague",
         "area": "78,870 km²",
         "pop": "~10,887,000",
@@ -499,6 +561,7 @@
     {
         "index": "dk",
         "type": "1",
+        "name":"Denmark",
         "capital": "Copenhagen",
         "area": "42,920 km²",
         "pop": "~6,009,000",
@@ -507,6 +570,7 @@
     {
         "index": "dj",
         "type": "1",
+        "name": "Djibouti",
         "capital": "Djibouti City",
         "area": "23,200 km²",
         "pop": "~1,184,000",
@@ -515,6 +579,7 @@
     {
         "index": "dm",
         "type": "1",
+        "name": "Dominica",
         "capital": "Roseau",
         "area": "750 km²",
         "pop": "~65,871",
@@ -523,6 +588,7 @@
     {
         "index": "do",
         "type": "1",
+        "name": "Dominican Republic",
         "capital": "Santo Domingo",
         "area": "48,670 km²",
         "pop": "~11,520,000",
@@ -531,6 +597,7 @@
     {
         "index": "ec",
         "type": "1",
+        "name": "Ecuador",
         "capital": "Quito",
         "area": "256,370 km²",
         "pop": "~18,290,000",
@@ -539,6 +606,7 @@
     {
         "index": "eg",
         "type": "1",
+        "name": "Egypt",
         "capital": "Cairo",
         "area": "1,001,450 km²",
         "pop": "~118,366,000",
@@ -547,6 +615,7 @@
     {
         "index": "sv",
         "type": "1",
+        "name": "El Salvador",
         "capital": "San Salvador",
         "area": "21,040 km²",
         "pop": "~6,366,000",
@@ -555,6 +624,7 @@
     {
         "index": "gq",
         "type": "1",
+        "name": "Equatorial Guinea",
         "capital": "Malabo",
         "area": "28,050 km²",
         "pop": "~1,938,000",
@@ -563,6 +633,7 @@
     {
         "index": "er",
         "type": "1",
+        "name": "Eritrea",
         "capital": "Asmara",
         "area": "117,600 km²",
         "pop": "~3,607,000",
@@ -571,6 +642,7 @@
     {
         "index": "ee",
         "type": "1",
+        "name": "Estonia",
         "capital": "Tallinn",
         "area": "45,340 km²",
         "pop": "~1,366,000",
@@ -579,6 +651,7 @@
     {
         "index": "sz",
         "type": "1",
+        "name": "Eswatini",
         "capital": "Mbabane",
         "area": "17,360 km²",
         "pop": "~1,256,000",
@@ -587,6 +660,7 @@
     {
         "index": "et",
         "type": "1",
+        "name": "Ethiopia",
         "capital": "Addis Ababa",
         "area": "1,104,300 km²",
         "pop": "~135,472,000",
@@ -595,6 +669,7 @@
     {
         "index": "fk",
         "type": "2",
+        "name": "Falkland Islands",
         "capital": "Stanley",
         "area": "12,173 km²",
         "pop": "~3,662",
@@ -603,6 +678,7 @@
     {
         "index": "fo",
         "type": "2",
+        "name": "Faroe Islands",
         "capital": "Tórshavn",
         "area": "1,396 km²",
         "pop": "~54,900",
@@ -611,6 +687,7 @@
     {
         "index": "fj",
         "type": "1",
+        "name": "Fiji",
         "capital": "Suva",
         "area": "18,270 km²",
         "pop": "~933,154",
@@ -619,6 +696,7 @@
     {
         "index": "fi",
         "type": "1",
+        "name": "Finland",
         "capital": "Helsinki",
         "area": "338,450 km²",
         "pop": "~5,646,000",
@@ -627,6 +705,7 @@
     {
         "index": "fr",
         "type": "1",
+        "name": "France",
         "capital": "Paris",
         "area": "549,087 km²",
         "pop": "~68,720,000",
@@ -635,6 +714,7 @@
     {
         "index": "gf",
         "type": "2",
+        "name": "French Guiana",
         "capital": "Cayenne",
         "area": "83,534 km²",
         "pop": "~295,385",
@@ -643,6 +723,7 @@
     {
         "index": "pf",
         "type": "2",
+        "name": "French Polynesia",
         "capital": "Papeete",
         "area": "2,000 km²",
         "pop": "~282,465",
@@ -651,6 +732,7 @@
     {
         "index": "tf",
         "type": "2",
+        "name": "French Southern and Antarctic Territories",
         "capital": "x",
         "area": "439,676 km²",
         "pop": "uninhabited",
@@ -659,6 +741,7 @@
     {
         "index": "ga",
         "type": "1",
+        "name": "Gabon",
         "capital": "Libreville",
         "area": "267,670 km²",
         "pop": "2,593,000",
@@ -667,6 +750,7 @@
     {
         "index": "gm",
         "type": "1",
+        "name": "The Gambia",
         "capital": "Bangjul",
         "area": "11,300 km²",
         "pop": "2,822,000",
@@ -675,6 +759,7 @@
     {
         "index": "ge",
         "type": "1",
+        "name": "Georgia",
         "capital": "Tbilisi",
         "area": "69,700 km²",
         "pop": "3,936,000",
@@ -683,6 +768,7 @@
     {
         "index": "de",
         "type": "1",
+        "name": "Germany",
         "capital": "Berlin",
         "area": "357,580 km²",
         "pop": "83,491,000",
@@ -691,6 +777,7 @@
     {
         "index": "gh",
         "type": "1",
+        "name": "Ghana",
         "capital": "Accra",
         "area": "238,540 km²",
         "pop": "35,064,000",
@@ -699,6 +786,7 @@
     {
         "index": "gi",
         "type": "2",
+        "name": "Gibraltar",
         "capital": "Gibraltar",
         "area": "6.8 km²",
         "pop": "40,126",
@@ -707,6 +795,7 @@
     {
         "index": "gr",
         "type": "1",
+        "name": "Greece",
         "capital": "Athens",
         "area": "131,960 km²",
         "pop": "10,414,000",
@@ -715,6 +804,7 @@
     {
         "index": "gl",
         "type": "2",
+        "name": "Greenland",
         "capital": "Nuuk",
         "area": "2,166,086 km²",
         "pop": "56,831",
