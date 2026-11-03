@@ -28,25 +28,31 @@ public class flashcards {
     }
 
     home.CorT currentFC;
-    Integer revealed = 0;
+    Integer revealed = 1;
 
     // efficient way to grab a complete random- grab a random NUMBER from the
     // totalCorTs, and find if it is higher or
     // lower than the size of the smth smths
     private void revealCurrentFCInfo() {
-        revealed = 1;
-        List<Text> info = List.of(new Text(currentFC.name), new Text("Capital - " + currentFC.capital));
-        Text capital = new Text("Capital - " + currentFC.capital);
 
-        currentFCInfo.getChildren().addAll(info);
-        currentFCInfo.getChildren().add(capital);
+        List<Text> info = List.of(new Text(currentFC.name), new Text("\n Capital - " + currentFC.capital));
+        // Text capital = new Text("\n Capital - " + currentFC.capital);
+
+        currentFCInfo.getChildren().addAll(List.of(
+                new Text(currentFC.name + " [" + currentFC.index + "]"),
+                new Text("\n Capital - " + currentFC.capital),
+                new Text("\n Population - " + currentFC.pop),
+                new Text("\n Area - " + currentFC.area),
+                new Text("\n Description - " + currentFC.desc)));
+        revealed = 1;
     }
 
     private void nextFlag() {
-        revealed = 0;
+
         currentFC = home.totalCorTs.get(ThreadLocalRandom.current().nextInt(0, home.totalCorTs.size() + 1));
         flashcardsIV.setImage(home.returnCorTImg(currentFC.index));
-
+        revealed = 0;
+        currentFCInfo.getChildren().clear();
     }
 
     // public Image adF = new

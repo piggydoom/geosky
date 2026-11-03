@@ -2,6 +2,8 @@ package com.piggydoom;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -109,7 +111,15 @@ public class home {
     // ThreadLocalRandom.current().nextInt(0, home.totalCorTs.size() + 1);
     // }
     public static Image returnCorTImg(String index) {
-        Image flag = new Image(home.class.getResource("/com/piggydoom/flags/" + index + ".png").toExternalForm());
-        return flag;
+        // Image flag = new Image(home.class.getResource("/com/piggydoom/flags/" + index + ".png").toExternalForm());
+        // return flag;
+
+        try {
+        // Attempt to load from the primary directory
+        return new Image(home.class.getResource("/com/piggydoom/flags/" + index + ".png").toExternalForm());
+    } catch (Exception e) {
+        // Fallback to the backup directory x/y/z if the primary fails
+        return new Image(home.class.getResource("/com/piggydoom/missing/missingFlag.png").toExternalForm());
+    }
     }
 }
