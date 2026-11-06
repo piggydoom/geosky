@@ -1,0 +1,6 @@
+.buttonStyle1{
+    -fx-background-color: rgb(77, 173, 85);
+    -fx-pref-width: 80px;
+    -fx-padding: 10px;
+    -fx-border-radius: 40px;
+}

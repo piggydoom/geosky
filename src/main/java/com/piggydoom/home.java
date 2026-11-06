@@ -29,12 +29,19 @@ public class home {
         App.setRoot("flashcards");
     }
 
-    public static final File geoData = new File("src\\main\\resources\\com\\piggydoom\\geoData.json");
+    @FXML
+    public void toQuickname() throws IOException {
+        App.setRoot("quickname");
+    }
+
+    public static final File countryData = new File("src\\main\\resources\\com\\piggydoom\\JSON\\countryData.json");
+     public static final File cities500 = new File("src\\main\\resources\\com\\piggydoom\\JSON\\cities500.json");
 
     public static class CorT {
         public String index;
         public Integer type;
         public String name;
+        public String cont;
         public String capital;
         public String area;
         public String pop;
@@ -43,17 +50,46 @@ public class home {
         public CorT() {
         }
 
-        public CorT(String index, Integer type, String name, String capital, String area, String pop, String desc) {
+        public CorT(String index, Integer type, String name, String cont, String capital, String area, String pop, String desc) {
 
             this.index = index;
             this.type = type;
             this.name = name;
+            this.cont = cont;
             this.capital = capital;
             this.area = area;
             this.pop = pop;
             this.desc = desc;
         }
     }
+
+      public static class City {
+        public String id;
+        public String name;
+        public String country;
+        public String admin1;
+        public String admin2;
+        public String lat;
+        public String lon;
+        public String pop;
+
+        public City() {
+        }
+
+        public City(String id, String name, String country, String admin1, String admin2, String lat, String lon, String pop) {
+
+            this.id = id;
+            this.name = name;
+            this.country = country;
+            this.admin1 = admin1;
+            this.admin2 = admin2;
+            this.lat = lat;
+            this.lon = lon;
+            this.pop = pop;
+        }
+    }
+
+    
 
     public static ObservableList<CorT> totalCorTs = FXCollections.observableArrayList();
     public static ObservableList<CorT> t1CorTs = FXCollections.observableArrayList();
@@ -63,7 +99,7 @@ public class home {
         // pre-sort JSON objs by type.
         ObjectMapper mapper = new ObjectMapper();
         try {
-            List<CorT> CorTJSON = mapper.readValue(geoData, new TypeReference<List<CorT>>() {
+            List<CorT> CorTJSON = mapper.readValue(countryData, new TypeReference<List<CorT>>() {
             });
             totalCorTs.addAll(CorTJSON);
 
@@ -91,15 +127,30 @@ public class home {
     }
 
     // gets a specific
-    public static CorT getCorT(String index) {
+    public static CorT getCorTbyIndex(String index) {
         ObjectMapper objectMapper = new ObjectMapper();
 
         try {
-            List<CorT> totalList = objectMapper.readValue(geoData, new TypeReference<List<CorT>>() {
+            List<CorT> totalList = objectMapper.readValue(countryData, new TypeReference<List<CorT>>() {
             });
 
             Optional<CorT> selIndex = totalList.stream()
                     .filter(user -> user.index.equals(index))
+                    .findFirst();
+            return selIndex.orElse(null);
+        } catch (IOException e) {
+            throw new RuntimeException("Could not read country data", e);
+        }
+    }
+    public static CorT getCorTbyName(String name) {
+        ObjectMapper objectMapper = new ObjectMapper();
+
+        try {
+            List<CorT> totalList = objectMapper.readValue(countryData, new TypeReference<List<CorT>>() {
+            });
+
+            Optional<CorT> selIndex = totalList.stream()
+                    .filter(sel -> sel.name.toLowerCase().equals(name.toLowerCase()))
                     .findFirst();
             return selIndex.orElse(null);
         } catch (IOException e) {
@@ -111,15 +162,10 @@ public class home {
     // ThreadLocalRandom.current().nextInt(0, home.totalCorTs.size() + 1);
     // }
     public static Image returnCorTImg(String index) {
-        // Image flag = new Image(home.class.getResource("/com/piggydoom/flags/" + index + ".png").toExternalForm());
-        // return flag;
-
         try {
-        // Attempt to load from the primary directory
-        return new Image(home.class.getResource("/com/piggydoom/flags/" + index + ".png").toExternalForm());
-    } catch (Exception e) {
-        // Fallback to the backup directory x/y/z if the primary fails
-        return new Image(home.class.getResource("/com/piggydoom/missing/missingFlag.png").toExternalForm());
-    }
+            return new Image(home.class.getResource("/com/piggydoom/media/flags/" + index + ".png").toExternalForm());
+        } catch (Exception e) {
+            return new Image(home.class.getResource("/com/piggydoom/media/missing/missingFlag.png").toExternalForm());
+        }
     }
 }

@@ -13,9 +13,8 @@
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
          <children>
             <Label text="GEOSKY" />
-            <Button layoutX="124.0" layoutY="5.0" mnemonicParsing="false" onAction="#testCountry" text="test" />
          </children></AnchorPane>
-    <GridPane prefHeight="353.0" prefWidth="600.0">
+    <GridPane prefHeight="353.0" prefWidth="600.0" stylesheets="@../styles.css">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -28,7 +27,8 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
          <children>
-            <Button fx:id="hbFlashcards" mnemonicParsing="false" onAction="#toFlashcards" text="Flashcards" />
+            <Button fx:id="hbFlashcards" mnemonicParsing="false" onAction="#toFlashcards" styleClass="buttonStyle1" stylesheets="@../styles.css" text="Flashcards" />
+            <Button fx:id="hbQNCities" layoutX="10.0" layoutY="35.0" mnemonicParsing="false" onAction="#toQuickname" styleClass="buttonStyle1" stylesheets="@../styles.css" text="quickname cities" GridPane.columnIndex="1" />
          </children>
             </GridPane>
   </items>

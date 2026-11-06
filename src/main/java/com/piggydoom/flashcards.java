@@ -34,16 +34,10 @@ public class flashcards {
     // totalCorTs, and find if it is higher or
     // lower than the size of the smth smths
     private void revealCurrentFCInfo() {
-
-        List<Text> info = List.of(new Text(currentFC.name), new Text("\n Capital - " + currentFC.capital));
-        // Text capital = new Text("\n Capital - " + currentFC.capital);
-
-        currentFCInfo.getChildren().addAll(List.of(
-                new Text(currentFC.name + " [" + currentFC.index + "]"),
-                new Text("\n Capital - " + currentFC.capital),
-                new Text("\n Population - " + currentFC.pop),
-                new Text("\n Area - " + currentFC.area),
-                new Text("\n Description - " + currentFC.desc)));
+        currentFCInfo.getChildren()
+                .add(new Text(currentFC.name + " [" + currentFC.index + "] \n Capital - " + currentFC.capital
+                        + "\n Population - " + currentFC.pop + "\n Area - " + currentFC.area + "\n Description - "
+                        + currentFC.desc));
         revealed = 1;
     }
 
