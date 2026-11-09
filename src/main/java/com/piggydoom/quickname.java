@@ -93,8 +93,10 @@ public class quickname {
         cityPrompts.add(new prompt(4, "continent", "NA", "Cities in North American Countries"));
         cityPrompts.add(new prompt(5, "continent", "SA", "Cities in South American Countries"));
         cityPrompts.add(new prompt(6, "continent", "Oceania", "Cities in Oceanian Countries"));
+        cityPrompts.add(new prompt(0, "country", "US", "Cities in the U.S.A"));
         countryPrompts.add(new prompt(0, "continent", "Africa", "African Countries"));
         countryPrompts.add(new prompt(0, "continent", "Asia", "Asian Countries"));
+        
 
         beginRestartBtn.setOnAction(event -> {
             beginOrRestart();
@@ -108,6 +110,7 @@ public class quickname {
 
     private void beginOrRestart() {
         System.out.println(modeSel.getValue());
+        
         Random rand = new Random();
         denyList.clear();
         score = 0;
@@ -132,7 +135,7 @@ public class quickname {
                 switch (selPrompt.type) {
                     case "continent":
                         try {
-                            String submittedCorTCont = (home.getCorTbyName(inputField.getText()).cont);
+                            String submitted = (home.getCorTbyName(inputField.getText()).cont);
                         } catch (Exception e) {
                             System.out.println("failed");
                         }
@@ -144,15 +147,25 @@ public class quickname {
                 }
                 // cities
             } else if (modeSel.getValue().equals("Cities")) {
-
+                switch (selPrompt.type) {
+                    case "country":
+                        try {
+                            String submit = (home.getCityByName(inputField.getText()).name);
+                        } catch (Exception e) {
+                            System.out.println("failed");
+                        }
+                        if ((home.getCityByName(inputField.getText())).country.equals(selPrompt.lookFor)) {
+                            System.out.println("correct");
+                            denyList.add(inputField.getText().toLowerCase());
+                            scoreLbl.setText(String.valueOf(score += 1));
+                        }
+                }
             }
             //
-        } else{
+        } else {
             System.out.println("already done");
         }
         //
 
     }
 }
-
-//linked city500 - quickname working score, no repeat rule, verifying continents, ignore case, and further geodata

@@ -158,6 +158,23 @@ public class home {
         }
     }
 
+     public static City getCityByName(String name) {
+        ObjectMapper objectMapper = new ObjectMapper();
+
+        try {
+            List<City> totalList = objectMapper.readValue(cities500, new TypeReference<List<City>>() {
+            });
+
+            Optional<City> selIndex = totalList.stream()
+                    .filter(sel -> sel.name.toLowerCase().equals(name.toLowerCase()))
+                    .findFirst();
+            return selIndex.orElse(null);
+        } catch (IOException e) {
+            throw new RuntimeException("Could not read country data", e);
+        }
+    }
+
+
     // public static CorT getRandCorT(Integer type){
     // ThreadLocalRandom.current().nextInt(0, home.totalCorTs.size() + 1);
     // }
