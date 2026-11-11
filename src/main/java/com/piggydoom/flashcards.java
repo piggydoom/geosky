@@ -44,7 +44,7 @@ public class flashcards {
     private void nextFlag() {
 
         currentFC = home.totalCorTs.get(ThreadLocalRandom.current().nextInt(0, home.totalCorTs.size() + 1));
-        flashcardsIV.setImage(home.returnCorTImg(currentFC.index));
+        flashcardsIV.setImage(home.CorTReturnImage(currentFC.index));
         revealed = 0;
         currentFCInfo.getChildren().clear();
     }

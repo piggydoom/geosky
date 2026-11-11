@@ -9,23 +9,23 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<SplitPane dividerPositions="0.13926174496644295" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.piggydoom.quickname">
+<SplitPane dividerPositions="0.13926174496644295" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" stylesheets="@../styles.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.piggydoom.quickname">
   <items>
-      <ToolBar prefHeight="40.0" prefWidth="362.0">
+      <ToolBar prefHeight="40.0" prefWidth="362.0" styleClass="header1">
         <items>
-            <Label text="QUICKNAME" />
+            <Label styleClass="titleStyle1" text="QUICKNAME" />
             <ChoiceBox fx:id="modeSel" prefWidth="150.0" />
-          <Button fx:id="toHomeBtn" mnemonicParsing="false" onAction="#toHome" text="home" />
+          <Button fx:id="toHomeBtn" mnemonicParsing="false" onAction="#toHome" styleClass="homeButtonStyle2" text="home" />
         </items>
       </ToolBar>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" styleClass="background1">
          <children>
             <ImageView fx:id="flashcardsIV" fitHeight="245.0" fitWidth="379.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
             <Button fx:id="beginRestartBtn" layoutX="532.0" layoutY="14.0" mnemonicParsing="false" text="Begin" />
             <TextField fx:id="inputField" layoutX="224.0" layoutY="259.0" promptText="Type Here" />
             <Label fx:id="promptLbl" layoutX="274.0" layoutY="18.0" />
             <Label fx:id="timeLbl" layoutX="14.0" layoutY="18.0" text="Time" />
-            <Button fx:id="submitBtn" layoutX="276.0" layoutY="297.0" mnemonicParsing="false" text="check" />
+            <Button fx:id="submitBtn" layoutX="268.0" layoutY="291.0" mnemonicParsing="false" styleClass="buttonStyle2" text="check" />
             <Label fx:id="scoreLbl" layoutX="493.0" layoutY="18.0" text="Score" />
          </children>
       </AnchorPane>

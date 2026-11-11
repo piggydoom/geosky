@@ -35,7 +35,6 @@ public class home {
     }
 
     public static final File countryData = new File("src\\main\\resources\\com\\piggydoom\\JSON\\countryData.json");
-     public static final File cities500 = new File("src\\main\\resources\\com\\piggydoom\\JSON\\cities500.json");
 
     public static class CorT {
         public String index;
@@ -50,7 +49,8 @@ public class home {
         public CorT() {
         }
 
-        public CorT(String index, Integer type, String name, String cont, String capital, String area, String pop, String desc) {
+        public CorT(String index, Integer type, String name, String cont, String capital, String area, String pop,
+                String desc) {
 
             this.index = index;
             this.type = type;
@@ -63,7 +63,7 @@ public class home {
         }
     }
 
-      public static class City {
+    public static class City {
         public String id;
         public String name;
         public String country;
@@ -76,7 +76,8 @@ public class home {
         public City() {
         }
 
-        public City(String id, String name, String country, String admin1, String admin2, String lat, String lon, String pop) {
+        public City(String id, String name, String country, String admin1, String admin2, String lat, String lon,
+                String pop) {
 
             this.id = id;
             this.name = name;
@@ -88,8 +89,6 @@ public class home {
             this.pop = pop;
         }
     }
-
-    
 
     public static ObservableList<CorT> totalCorTs = FXCollections.observableArrayList();
     public static ObservableList<CorT> t1CorTs = FXCollections.observableArrayList();
@@ -142,6 +141,7 @@ public class home {
             throw new RuntimeException("Could not read country data", e);
         }
     }
+
     public static CorT getCorTbyName(String name) {
         ObjectMapper objectMapper = new ObjectMapper();
 
@@ -158,12 +158,14 @@ public class home {
         }
     }
 
-     public static City getCityByName(String name) {
+    public static City getCorTCityByName(String name, String CorTIndex) {
         ObjectMapper objectMapper = new ObjectMapper();
 
         try {
-            List<City> totalList = objectMapper.readValue(cities500, new TypeReference<List<City>>() {
-            });
+            List<City> totalList = objectMapper.readValue(
+                    new File("src\\main\\resources\\com\\piggydoom\\JSON\\cities\\" + CorTIndex + ".json"),
+                    new TypeReference<List<City>>() {
+                    });
 
             Optional<City> selIndex = totalList.stream()
                     .filter(sel -> sel.name.toLowerCase().equals(name.toLowerCase()))
@@ -174,15 +176,19 @@ public class home {
         }
     }
 
-
     // public static CorT getRandCorT(Integer type){
     // ThreadLocalRandom.current().nextInt(0, home.totalCorTs.size() + 1);
     // }
-    public static Image returnCorTImg(String index) {
+    public static Image CorTReturnImage(String index) {
         try {
             return new Image(home.class.getResource("/com/piggydoom/media/flags/" + index + ".png").toExternalForm());
         } catch (Exception e) {
             return new Image(home.class.getResource("/com/piggydoom/media/missing/missingFlag.png").toExternalForm());
         }
     }
+
+    // public static String CorTExchangeNameForIndex(String name){
+
+    // }
+
 }

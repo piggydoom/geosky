@@ -1,6 +1,54 @@
-.buttonStyle1{
+.homeButtonStyle2 {
+    -fx-background-color: rgb(203, 207, 234);
+    -fx-border-width: 2px;
+    -fx-border-color: rgb(155, 157, 193);
+    -fx-border-radius: 10px;
+    -fx-padding: 3px;
+    -fx-background-radius: 10px;
+    -fx-font-family: "Biotrip Serif Caps";
+}
+
+.buttonStyle1 {
     -fx-background-color: rgb(77, 173, 85);
-    -fx-pref-width: 80px;
-    -fx-padding: 10px;
+    -fx-border-width: 2px;
+    -fx-border-color: black;
     -fx-border-radius: 40px;
+    -fx-padding: 10px;
+    -fx-background-radius: 40px;
+    -fx-justify-self: center;
+    -fx-font-family: "Biotrip Serif Caps";
+    -fx-font-size: larger;
+
+}
+
+.buttonStyle2 {
+    -fx-background-color: rgb(77, 83, 173);
+    -fx-border-width: 2px;
+    -fx-border-color: rgb(31, 25, 73);
+    -fx-border-radius: 40px;
+    -fx-padding: 7px;
+    -fx-background-radius: 40px;
+    -fx-font-family: "Biotrip Serif Caps";
+    -fx-font-size: larger;
+
+}
+
+.titleStyle1 {
+    -fx-font-size: 30px;
+    -fx-font-family: "Biotrip Serif Caps";
+}
+
+.homeCell {
+    -fx-background-color: rgb(74, 108, 75);
+    -fx-border: 20px;
+    -fx-border-width: 10px;
+    -fx-border-color: rgb(91, 160, 94);
+}
+
+.background1 {
+    -fx-background-color: rgb(177, 207, 236);
+}
+
+.header1 {
+    -fx-background-color: rgb(147, 174, 199);
 }

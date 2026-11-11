@@ -87,12 +87,12 @@ public class quickname {
 
         // "type" MUST match the JSON parameter you are looking at, and "lookFor" MUST
         // equal the exact value you are looking for as that JSON parameter
-        cityPrompts.add(new prompt(1, "continent", "Africa", "Cities in African Countries"));
-        cityPrompts.add(new prompt(2, "continent", "Europe", "Cities in European Countries"));
-        cityPrompts.add(new prompt(3, "continent", "Asia", "Cities in Asian Countries"));
-        cityPrompts.add(new prompt(4, "continent", "NA", "Cities in North American Countries"));
-        cityPrompts.add(new prompt(5, "continent", "SA", "Cities in South American Countries"));
-        cityPrompts.add(new prompt(6, "continent", "Oceania", "Cities in Oceanian Countries"));
+        // cityPrompts.add(new prompt(1, "continent", "Africa", "Cities in African Countries"));
+        // cityPrompts.add(new prompt(2, "continent", "Europe", "Cities in European Countries"));
+        // cityPrompts.add(new prompt(3, "continent", "Asia", "Cities in Asian Countries"));
+        // cityPrompts.add(new prompt(4, "continent", "NA", "Cities in North American Countries"));
+        // cityPrompts.add(new prompt(5, "continent", "SA", "Cities in South American Countries"));
+        // cityPrompts.add(new prompt(6, "continent", "Oceania", "Cities in Oceanian Countries"));
         cityPrompts.add(new prompt(0, "country", "US", "Cities in the U.S.A"));
         countryPrompts.add(new prompt(0, "continent", "Africa", "African Countries"));
         countryPrompts.add(new prompt(0, "continent", "Asia", "Asian Countries"));
@@ -128,6 +128,10 @@ public class quickname {
 
     private void submitAns() {
 
+        //IDEA for LATER-
+        //for faster results, make it so while the user is typing, it creates on obsList of cities that match what is so far
+        //typed.
+
         if (!denyList.contains(inputField.getText().toLowerCase())) {
 
             // countries
@@ -150,11 +154,11 @@ public class quickname {
                 switch (selPrompt.type) {
                     case "country":
                         try {
-                            String submit = (home.getCityByName(inputField.getText()).name);
+                            String submit = (home.getCorTCityByName(inputField.getText(), "US").name);
                         } catch (Exception e) {
                             System.out.println("failed");
                         }
-                        if ((home.getCityByName(inputField.getText())).country.equals(selPrompt.lookFor)) {
+                        if ((home.getCorTCityByName(inputField.getText(), "US")).country.equals(selPrompt.lookFor)) {
                             System.out.println("correct");
                             denyList.add(inputField.getText().toLowerCase());
                             scoreLbl.setText(String.valueOf(score += 1));

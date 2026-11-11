@@ -7,14 +7,17 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
 
-<SplitPane dividerPositions="0.1040268456375839" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.piggydoom.home">
+<SplitPane dividerPositions="0.1040268456375839" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" stylesheets="@../styles.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.piggydoom.home">
   <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
          <children>
-            <Label text="GEOSKY" />
-         </children></AnchorPane>
-    <GridPane prefHeight="353.0" prefWidth="600.0" stylesheets="@../styles.css">
+            <!-- Cleaned up redundant stylesheets references -->
+            <Label layoutX="273.0" layoutY="8.0" styleClass="titleStyle1" text="GEOSKY" />
+         </children>
+    </AnchorPane>
+    <GridPane prefHeight="353.0" prefWidth="600.0" styleClass="homegrid">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -27,9 +30,20 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
          <children>
-            <Button fx:id="hbFlashcards" mnemonicParsing="false" onAction="#toFlashcards" styleClass="buttonStyle1" stylesheets="@../styles.css" text="Flashcards" />
-            <Button fx:id="hbQNCities" layoutX="10.0" layoutY="35.0" mnemonicParsing="false" onAction="#toQuickname" styleClass="buttonStyle1" stylesheets="@../styles.css" text="quickname cities" GridPane.columnIndex="1" />
+            <!-- Row 0, Column 0 -->
+            <StackPane styleClass="homeCell" GridPane.columnIndex="0" GridPane.rowIndex="0">
+               <children>
+                  <Button fx:id="hbFlashcards" mnemonicParsing="false" onAction="#toFlashcards" styleClass="buttonStyle1" text="Flashcards" />
+               </children>
+            </StackPane>
+            
+            <!-- Row 0, Column 1 -->
+            <StackPane styleClass="homeCell" GridPane.columnIndex="1" GridPane.rowIndex="0">
+               <children>
+                  <Button fx:id="hbQNCities" mnemonicParsing="false" onAction="#toQuickname" prefHeight="46.0" prefWidth="133.0" styleClass="buttonStyle1" text="quickname cities" />
+               </children>
+            </StackPane>
          </children>
-            </GridPane>
+      </GridPane>
   </items>
 </SplitPane>
