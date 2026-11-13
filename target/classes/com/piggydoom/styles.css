@@ -1,3 +1,8 @@
+/* font names- 
+Biotrip Serif Caps
+Gentium Book Basic
+Droid Serif */
+
 .homeButtonStyle2 {
     -fx-background-color: rgb(203, 207, 234);
     -fx-border-width: 2px;
@@ -16,7 +21,7 @@
     -fx-padding: 10px;
     -fx-background-radius: 40px;
     -fx-justify-self: center;
-    -fx-font-family: "Biotrip Serif Caps";
+    -fx-font-family: "Gentium Book Basic";
     -fx-font-size: larger;
 
 }
@@ -28,14 +33,23 @@
     -fx-border-radius: 40px;
     -fx-padding: 7px;
     -fx-background-radius: 40px;
-    -fx-font-family: "Biotrip Serif Caps";
+    -fx-font-family: "Gentium Book Basic";
     -fx-font-size: larger;
-
+}
+.buttonStyle2-1 {
+    -fx-background-color: rgb(173, 77, 77);
+    -fx-border-width: 2px;
+    -fx-border-color: rgb(73, 25, 25);
+    -fx-border-radius: 40px;
+    -fx-padding: 7px;
+    -fx-background-radius: 40px;
+    -fx-font-family: "Gentium Book Basic";
+    -fx-font-size: larger;
 }
 
 .titleStyle1 {
     -fx-font-size: 30px;
-    -fx-font-family: "Biotrip Serif Caps";
+    -fx-font-family: "Gentium Book Basic";
 }
 
 .homeCell {
@@ -44,11 +58,55 @@
     -fx-border-width: 10px;
     -fx-border-color: rgb(91, 160, 94);
 }
+.header1 {
+    -fx-background-color: rgb(76, 101, 77);
+}
 
-.background1 {
+.background2 {
     -fx-background-color: rgb(177, 207, 236);
 }
 
-.header1 {
+.header2 {
     -fx-background-color: rgb(147, 174, 199);
+}
+
+.input2 {
+    -fx-background-color: rgb(147, 174, 199);
+    -fx-font-family: "Droid Serif";
+    -fx-color: rgb(80, 168, 168);
+}
+
+.generalBox2 {
+    -fx-background-color: rgb(227, 229, 243);
+    -fx-border-width: 2px;
+    -fx-border-color: rgb(155, 157, 193);
+    -fx-border-radius: 5px;
+    -fx-padding: 2px;
+    -fx-background-radius: 5px;
+    -fx-font-family: "Gentium Book Basic";
+}
+
+.label2 {
+    -fx-font-size: 25px;
+    -fx-font-family: "Gentium Book Basic";
+}
+
+.labelNumbers2 {
+    -fx-font-size: 25px;
+    -fx-font-family: "Gentium Book Basic";
+    -fx-background-color: rgb(244, 245, 255);
+    -fx-border-width: 2px;
+    -fx-border-color: rgb(179, 181, 215);
+    -fx-border-radius: 5px;
+    -fx-padding: 2px;
+    -fx-background-radius: 5px;
+}
+
+#homegrid {
+    -fx-background-color: rgb(131, 153, 129);
+}
+
+.denyPaneItem{
+    -fx-border-color: rgb(121, 121, 121);
+    -fx-background-color:rgb(12,12,12);
 }

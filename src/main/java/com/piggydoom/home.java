@@ -5,9 +5,11 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.stream.Collectors;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -115,14 +117,18 @@ public class home {
         }
     }
 
-    @FXML
-    public void testCountry() {
-        // CorT fr = getCorT("fr");
-        // // System.out.println(getCorT("fr").index);
-        // System.out.println(fr.capital);
-        // System.out.println(fr.pop);
+    public static List<CorT> returnCorTsortedByContList(String selCont) {
+        ObjectMapper objectMapper = new ObjectMapper();
+        try {
+            List<CorT> totalList = objectMapper.readValue(countryData, new TypeReference<List<CorT>>() {
+            });
+            return totalList.stream()
+                    .filter(user -> user.cont.equals(selCont))
+                    .collect(Collectors.toList());
+        } catch (IOException e) {
+            throw new RuntimeException("it was line 120 again", e);
+        }
 
-        System.out.println(t234CorTs.get(0).capital);
     }
 
     // gets a specific

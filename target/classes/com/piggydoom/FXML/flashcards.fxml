@@ -9,21 +9,21 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.TextFlow?>
 
-<SplitPane dividerPositions="0.13926174496644295" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.piggydoom.flashcards">
+<SplitPane dividerPositions="0.13926174496644295" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" stylesheets="@../styles.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.piggydoom.flashcards">
   <items>
-      <ToolBar prefHeight="40.0" prefWidth="362.0">
+      <ToolBar prefHeight="40.0" prefWidth="362.0" styleClass="header2">
         <items>
-            <Label text="FLASHCARDS" />
-            <CheckBox mnemonicParsing="false" text="Regions &amp; Territories" />
-            <CheckBox mnemonicParsing="false" text="Countries" />
-          <Button fx:id="flashcardsHB" mnemonicParsing="false" onAction="#toHome" text="home" />
+            <Label styleClass="titleStyle1" text="FLASHCARDS" />
+            <CheckBox mnemonicParsing="false" styleClass="generalBox2" text="Regions &amp; Territories" />
+            <CheckBox mnemonicParsing="false" styleClass="generalBox2" text="Countries" />
+          <Button fx:id="flashcardsHB" mnemonicParsing="false" onAction="#toHome" styleClass="homeButtonStyle2" text="home" />
         </items>
       </ToolBar>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" styleClass="background2">
          <children>
             <ImageView fx:id="flashcardsIV" fitHeight="245.0" fitWidth="379.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
-            <Button fx:id="flashcardsNextB" layoutX="273.0" layoutY="274.0" mnemonicParsing="false" text="Reveal" />
-            <TextFlow fx:id="currentFCInfo" layoutX="408.0" layoutY="14.0" prefHeight="245.0" prefWidth="175.0" />
+            <Button fx:id="flashcardsNextB" layoutX="273.0" layoutY="274.0" mnemonicParsing="false" styleClass="buttonStyle2" text="Reveal" />
+            <TextFlow fx:id="currentFCInfo" layoutX="408.0" layoutY="14.0" prefHeight="245.0" prefWidth="175.0" styleClass="generalBox2" />
          </children>
       </AnchorPane>
   </items>

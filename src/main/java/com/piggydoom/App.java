@@ -20,6 +20,12 @@ public class App extends Application {
     public void start(Stage stage) throws IOException {
         Font.loadFont(getClass().getResource("/com/piggydoom/biotrip-serif-caps-font/BiotripSerifCapsRegular.ttf").toExternalForm(), 10);   
         Font.loadFont(getClass().getResource("/com/piggydoom/droid-serif-font/DroidSerif.ttf").toExternalForm(), 10);       
+
+         var url = getClass().getResource("/com/piggydoom/gentium-book-basic-font/GentiumBookBasic.ttf");
+        System.out.println(url);
+        Font font = Font.loadFont(url.toExternalForm(), 10);
+        System.out.println(font);
+
         scene = new Scene(loadFXML("home"), 640, 480);
         stage.setScene(scene);
         stage.show();

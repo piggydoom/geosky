@@ -12,6 +12,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.util.Duration;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
@@ -20,6 +21,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.TilePane;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 
@@ -44,6 +46,10 @@ public class quickname {
     private Button submitBtn;
     @FXML
     private ChoiceBox modeSel;
+    @FXML
+    private TilePane denyPane;
+    @FXML
+    private Label failedLbl;
 
     private static class prompt {
         private Integer index;
@@ -65,9 +71,11 @@ public class quickname {
 
     List<prompt> cityPrompts = new ArrayList<>();
     List<prompt> countryPrompts = new ArrayList<>();
+    List<Node> changeWhenWrongAndRightNodes = new ArrayList();
     int startTime = 30;
     int score;
     int time;
+    boolean active = false;
     int mode = 1;
     prompt selPrompt;
     private ObservableList<String> denyList = FXCollections.observableArrayList();
@@ -76,6 +84,9 @@ public class quickname {
         if (time > 0) {
             time -= 1;
             timeLbl.setText(String.valueOf(time));
+
+        } else {
+            negativeResponse(1, null);
         }
         ;
     }));
@@ -87,32 +98,41 @@ public class quickname {
 
         // "type" MUST match the JSON parameter you are looking at, and "lookFor" MUST
         // equal the exact value you are looking for as that JSON parameter
-        // cityPrompts.add(new prompt(1, "continent", "Africa", "Cities in African Countries"));
-        // cityPrompts.add(new prompt(2, "continent", "Europe", "Cities in European Countries"));
-        // cityPrompts.add(new prompt(3, "continent", "Asia", "Cities in Asian Countries"));
-        // cityPrompts.add(new prompt(4, "continent", "NA", "Cities in North American Countries"));
-        // cityPrompts.add(new prompt(5, "continent", "SA", "Cities in South American Countries"));
-        // cityPrompts.add(new prompt(6, "continent", "Oceania", "Cities in Oceanian Countries"));
+        // cityPrompts.add(new prompt(1, "continent", "Africa", "Cities in African
+        // Countries"));
+        cityPrompts.add(new prompt(2, "continent", "Europe", "Cities in European Countries"));
+        cityPrompts.add(new prompt(3, "continent", "Asia", "Cities in Asian Countries"));
+        cityPrompts.add(new prompt(4, "continent", "NA", "Cities in North American Countries"));
+        cityPrompts.add(new prompt(5, "continent", "SA", "Cities in South American Countries"));
+        cityPrompts.add(new prompt(6, "continent", "Oceania", "Cities in Oceanian Countries"));
         cityPrompts.add(new prompt(0, "country", "US", "Cities in the U.S.A"));
         countryPrompts.add(new prompt(0, "continent", "Africa", "African Countries"));
         countryPrompts.add(new prompt(0, "continent", "Asia", "Asian Countries"));
-        
+
+        changeWhenWrongAndRightNodes.add(beginRestartBtn);
+        changeWhenWrongAndRightNodes.add(submitBtn);
+        changeWhenWrongAndRightNodes.add(timeLbl);
+        changeWhenWrongAndRightNodes.add(scoreLbl);
 
         beginRestartBtn.setOnAction(event -> {
             beginOrRestart();
         });
         submitBtn.setOnAction(event -> {
-            submitAns();
+            if (active) {
+                submitAns();
+            }
         });
 
         timeline.setCycleCount(startTime * 10);
+
     }
 
     private void beginOrRestart() {
-        System.out.println(modeSel.getValue());
-        
+
         Random rand = new Random();
         denyList.clear();
+        denyPane.getChildren().removeAll();
+
         score = 0;
         if (modeSel.getValue().equals("Countries")) {
             selPrompt = countryPrompts.get(rand.nextInt(countryPrompts.size()));
@@ -121,16 +141,28 @@ public class quickname {
         }
 
         promptLbl.setText(selPrompt.pTitleText);
-        System.out.println(selPrompt.pTitleText);
+        failedLbl.setText(null);
+        System.out.println("MODE = " + modeSel.getValue() + "\n TITLE = " + selPrompt.pTitleText);
         time = startTime;
         timeline.play();
+        active = true;
+    }
+
+    private void insertAns() {
+        System.out.println("correct");
+        denyList.add(inputField.getText().toLowerCase());
+        scoreLbl.setText(String.valueOf(score += 1));
+        Label insert = new Label(inputField.getText().toUpperCase());
+        insert.getStyleClass().add("generalBox2");
+        denyPane.getChildren().add(insert);
     }
 
     private void submitAns() {
 
-        //IDEA for LATER-
-        //for faster results, make it so while the user is typing, it creates on obsList of cities that match what is so far
-        //typed.
+        // IDEA for LATER-
+        // for faster results, make it so while the user is typing, it creates on
+        // obsList of cities that match what is so far
+        // typed.
 
         if (!denyList.contains(inputField.getText().toLowerCase())) {
 
@@ -144,9 +176,9 @@ public class quickname {
                             System.out.println("failed");
                         }
                         if ((home.getCorTbyName(inputField.getText()).cont).equals(selPrompt.lookFor)) {
-                            System.out.println("correct");
-                            denyList.add(inputField.getText().toLowerCase());
-                            scoreLbl.setText(String.valueOf(score += 1));
+                            insertAns();
+                        } else {
+                            negativeResponse(2, "Not in " + selPrompt.lookFor);
                         }
                 }
                 // cities
@@ -159,17 +191,59 @@ public class quickname {
                             System.out.println("failed");
                         }
                         if ((home.getCorTCityByName(inputField.getText(), "US")).country.equals(selPrompt.lookFor)) {
-                            System.out.println("correct");
-                            denyList.add(inputField.getText().toLowerCase());
-                            scoreLbl.setText(String.valueOf(score += 1));
+                            insertAns();
+                        } else {
+                            negativeResponse(2, "Not in " + home.getCorTbyIndex(selPrompt.lookFor).name);
                         }
+                        break;
+
+                    case "continent":
+                        List<home.CorT> continentCorTs = home.returnCorTsortedByContList(selPrompt.lookFor);
+                        for (home.CorT cort : continentCorTs) {
+                            home.City foundOrNot = home.getCorTCityByName(inputField.getText(), cort.index);
+                            if (foundOrNot != null) {
+                                System.out.println("found!");
+                            } else {
+                                negativeResponse(2, "Not in " + selPrompt.lookFor);
+                            }
+
+                        }
+
                 }
             }
-            //
+
         } else {
-            System.out.println("already done");
+            negativeResponse(3, null);
         }
-        //
 
     }
+
+    private void negativeResponse(Integer type, String response) {
+        switch (type) {
+            case 0:
+                failedLbl.setText("");
+                break;
+            case 1:
+                active = false;
+                failedLbl.setText("Ran out of time.");
+                for(Node i : changeWhenWrongAndRightNodes){
+                    i.getStyleClass().add("buttonStyle2-1");
+                }
+                break;
+            case 2:
+                active = false;
+                failedLbl.setText(response);
+                submitBtn.getStyleClass().add("buttonStyle2-1");
+                for(Node i : changeWhenWrongAndRightNodes){
+                    i.getStyleClass().add("buttonStyle2-1");
+                }
+                break;
+            case 3:
+                failedLbl.setText("Already done");
+                break;
+        }
+
+        active = false;
+    }
+
 }

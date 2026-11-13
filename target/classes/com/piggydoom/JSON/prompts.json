@@ -1,0 +1,60 @@
+{
+    "cortPrompts": [
+        {
+            "index": 0,
+            "type": "continent",
+            "lookFor": "Europe",
+            "prompt": "Countries in Europe"
+        },
+         {
+            "index": 0,
+            "type": "continent",
+            "lookFor": "Oceania",
+            "prompt": "Countries in Oceania"
+        },
+         {
+            "index": 0,
+            "type": "continent",
+            "lookFor": "NA",
+            "prompt": "Countries in North America"
+        },
+         {
+            "index": 0,
+            "type": "continent",
+            "lookFor": "Europe",
+            "prompt": "Countries in South America"
+        },
+         {
+            "index": 0,
+            "type": "continent",
+            "lookFor": "Asia",
+            "prompt": "Countries in Asia"
+        },
+         {
+            "index": 0,
+            "type": "continent",
+            "lookFor": "Africa",
+            "prompt": "Countries in Africa"
+        }
+    ],
+    "cityPrompts": [
+        {
+            "index": 0,
+            "type": "country",
+            "lookFor": "US",
+            "prompt": "Cities in the U.S.A"
+        },
+        {
+            "index": 0,
+            "type": "country",
+            "lookFor": "US",
+            "prompt": "Cities in India"
+        },
+        {
+            "index": 0,
+            "type": "country",
+            "lookFor": "US",
+            "prompt": "Cities in China"
+        }
+    ]
+}
