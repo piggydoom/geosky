@@ -2,6 +2,8 @@ package com.piggydoom;
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.Field;
+import java.lang.reflect.Parameter;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -10,9 +12,11 @@ import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.deser.impl.CreatorCandidate.Param;
 import com.piggydoom.home.CorT;
 
 import javafx.collections.FXCollections;
@@ -174,12 +178,44 @@ public class home {
                     });
 
             Optional<City> selIndex = totalList.stream()
-                    .filter(sel -> sel.name.toLowerCase().equals(name.toLowerCase()))
+                    .filter(sel -> sel.name.equalsIgnoreCase(name))
                     .findFirst();
             return selIndex.orElse(null);
         } catch (IOException e) {
             throw new RuntimeException("Could not read country data", e);
         }
+    }
+
+    public static List<City> createCitySampleSpace(String lookIn, String lookFor) {
+        File[] allCityFiles = new File("src\\main\\resources\\com\\piggydoom\\JSON\\cities").listFiles();
+        System.out.println("allCityFiles" + allCityFiles.length);
+        List<City> finalList = new ArrayList<>();
+        ObjectMapper objectMapper = new ObjectMapper();
+                   for (File i : allCityFiles) {
+                try {
+                    List<City> theseCities = objectMapper.readValue(
+                            i,
+                            new TypeReference<List<City>>() {
+                            });
+                    Field field = City.class.getDeclaredField(lookIn);
+
+                    List<City> matchingCities = theseCities.stream()
+                            .filter(x -> {
+                                try {
+                                    Object value = field.get(x);
+                                    return value != null && value.toString().equalsIgnoreCase(lookFor);
+                                } catch (IllegalAccessException e) {
+                                    throw new RuntimeException(e);
+                                }
+                            })
+                            .collect(Collectors.toList());
+                    finalList.addAll(matchingCities);
+                } catch (IOException | NoSuchFieldException e) {
+                    throw new RuntimeException("Could not read country data", e);
+                }
+            }
+        
+        return finalList;
     }
 
     // public static CorT getRandCorT(Integer type){

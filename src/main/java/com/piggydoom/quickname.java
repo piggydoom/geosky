@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
@@ -182,6 +184,8 @@ public class quickname {
         insert.getStyleClass().add("generalBox2");
         viewPane.getChildren().add(insert);
     }
+
+    
 
     private void submitAns() {
 
