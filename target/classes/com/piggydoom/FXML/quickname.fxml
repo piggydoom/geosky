@@ -26,10 +26,11 @@
             <TextField fx:id="inputField" layoutX="221.0" layoutY="259.0" promptText="Type Here" styleClass="input2" />
             <Label fx:id="promptLbl" layoutX="274.0" layoutY="18.0" styleClass="label2" />
             <Label fx:id="timeLbl" layoutX="14.0" layoutY="18.0" styleClass="labelNumbers2" text="0" />
-            <Button fx:id="submitBtn" layoutX="268.0" layoutY="288.0" mnemonicParsing="false" styleClass="buttonStyle2" text="check" />
+            <Button fx:id="submitBtn" layoutX="268.0" layoutY="288.0" mnemonicParsing="false" styleClass="buttonStyle2" text="Check" />
             <Label fx:id="scoreLbl" layoutX="332.0" layoutY="292.0" styleClass="labelNumbers2" text="0" />
-            <TilePane fx:id="denyPane" layoutX="13.0" layoutY="71.0" prefHeight="172.0" prefWidth="571.0" />
+            <TilePane fx:id="viewPane" layoutX="13.0" layoutY="71.0" prefHeight="172.0" prefWidth="571.0" />
             <Label fx:id="failedLbl" layoutX="37.0" layoutY="284.0" styleClass="label2" />
+            <Button fx:id="seeMissedAndGotToggleBtn" layoutX="487.0" layoutY="282.0" mnemonicParsing="false" styleClass="buttonStyle2" text="See Missed" />
          </children>
       </AnchorPane>
   </items>

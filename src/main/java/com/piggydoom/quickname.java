@@ -47,9 +47,11 @@ public class quickname {
     @FXML
     private ChoiceBox modeSel;
     @FXML
-    private TilePane denyPane;
+    private TilePane viewPane;
     @FXML
     private Label failedLbl;
+    @FXML
+    private Button seeMissedAndGotToggleBtn;
 
     private static class prompt {
         private Integer index;
@@ -77,8 +79,10 @@ public class quickname {
     int time;
     boolean active = false;
     int mode = 1;
+    int endViewMode = 1; // 1 = what was gotten, 2 = what was missed
     prompt selPrompt;
-    private ObservableList<String> denyList = FXCollections.observableArrayList();
+    private ObservableList<String> sampleSpace = FXCollections.observableArrayList();
+    private ObservableList<String> gotList = FXCollections.observableArrayList();
 
     Timeline timeline = new Timeline(new KeyFrame(Duration.millis(1000), event -> {
         if (time > 0) {
@@ -92,7 +96,7 @@ public class quickname {
     }));
 
     public void initialize() {
-
+        seeMissedAndGotToggleBtn.setVisible(false);
         modeSel.setItems(FXCollections.observableArrayList("Countries", "Cities"));
         modeSel.setValue("Countries");
 
@@ -123,6 +127,26 @@ public class quickname {
             }
         });
 
+        seeMissedAndGotToggleBtn.setOnAction(event -> {
+            if (endViewMode == 1) {
+                endViewMode = 2;
+                seeMissedAndGotToggleBtn.getStyleClass().add("buttonStyle2-1");
+                seeMissedAndGotToggleBtn.setText("See gotten");
+            } else {
+                endViewMode = 1;
+                seeMissedAndGotToggleBtn.getStyleClass().clear();
+                seeMissedAndGotToggleBtn.getStyleClass().add("buttonStyle2");
+                seeMissedAndGotToggleBtn.setText("See missed");
+
+                for (String got : gotList) {
+                    Label insert = new Label(got);
+                    insert.getStyleClass().add("generalBox2");
+                    viewPane.getChildren().add(insert);
+                }
+
+            }
+        });
+
         timeline.setCycleCount(startTime * 10);
 
     }
@@ -130,8 +154,8 @@ public class quickname {
     private void beginOrRestart() {
 
         Random rand = new Random();
-        denyList.clear();
-        denyPane.getChildren().removeAll();
+        gotList.clear();
+        viewPane.getChildren().removeAll();
 
         score = 0;
         if (modeSel.getValue().equals("Countries")) {
@@ -145,16 +169,18 @@ public class quickname {
         System.out.println("MODE = " + modeSel.getValue() + "\n TITLE = " + selPrompt.pTitleText);
         time = startTime;
         timeline.play();
+        seeMissedAndGotToggleBtn.setVisible(false);
         active = true;
     }
 
     private void insertAns() {
         System.out.println("correct");
-        denyList.add(inputField.getText().toLowerCase());
+        time = 30;
+        gotList.add(inputField.getText().toLowerCase());
         scoreLbl.setText(String.valueOf(score += 1));
         Label insert = new Label(inputField.getText().toUpperCase());
         insert.getStyleClass().add("generalBox2");
-        denyPane.getChildren().add(insert);
+        viewPane.getChildren().add(insert);
     }
 
     private void submitAns() {
@@ -164,7 +190,7 @@ public class quickname {
         // obsList of cities that match what is so far
         // typed.
 
-        if (!denyList.contains(inputField.getText().toLowerCase())) {
+        if (!gotList.contains(inputField.getText().toLowerCase())) {
 
             // countries
             if (modeSel.getValue().equals("Countries")) {
@@ -225,16 +251,18 @@ public class quickname {
                 break;
             case 1:
                 active = false;
+                seeMissedAndGotToggleBtn.setVisible(true);
                 failedLbl.setText("Ran out of time.");
-                for(Node i : changeWhenWrongAndRightNodes){
+                for (Node i : changeWhenWrongAndRightNodes) {
                     i.getStyleClass().add("buttonStyle2-1");
                 }
                 break;
             case 2:
                 active = false;
+                seeMissedAndGotToggleBtn.setVisible(true);
                 failedLbl.setText(response);
                 submitBtn.getStyleClass().add("buttonStyle2-1");
-                for(Node i : changeWhenWrongAndRightNodes){
+                for (Node i : changeWhenWrongAndRightNodes) {
                     i.getStyleClass().add("buttonStyle2-1");
                 }
                 break;
