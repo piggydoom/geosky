@@ -41,6 +41,7 @@ public class home {
     }
 
     public static final File countryData = new File("src\\main\\resources\\com\\piggydoom\\JSON\\countryData.json");
+    public static final File[] allCityFiles = new File("src\\main\\resources\\com\\piggydoom\\JSON\\cities").listFiles();
 
     public static class CorT {
         public String index;
@@ -187,34 +188,47 @@ public class home {
     }
 
     public static List<City> createCitySampleSpace(String lookIn, String lookFor) {
-        File[] allCityFiles = new File("src\\main\\resources\\com\\piggydoom\\JSON\\cities").listFiles();
+
+        try {
+            if (lookIn.equalsIgnoreCase("country")) {
+                ObjectMapper objectMapper = new ObjectMapper();
+                return objectMapper.readValue(
+                        new File("src\\main\\resources\\com\\piggydoom\\JSON\\cities\\" + lookFor + ".json"),
+                        new TypeReference<List<City>>() {
+                        });
+            }
+        } catch (IOException e) {
+            throw new RuntimeException();
+        }
+
+        
         System.out.println("allCityFiles" + allCityFiles.length);
         List<City> finalList = new ArrayList<>();
         ObjectMapper objectMapper = new ObjectMapper();
-                   for (File i : allCityFiles) {
-                try {
-                    List<City> theseCities = objectMapper.readValue(
-                            i,
-                            new TypeReference<List<City>>() {
-                            });
-                    Field field = City.class.getDeclaredField(lookIn);
+        for (File i : allCityFiles) {
+            try {
+                List<City> theseCities = objectMapper.readValue(
+                        i,
+                        new TypeReference<List<City>>() {
+                        });
+                Field field = City.class.getDeclaredField(lookIn);
 
-                    List<City> matchingCities = theseCities.stream()
-                            .filter(x -> {
-                                try {
-                                    Object value = field.get(x);
-                                    return value != null && value.toString().equalsIgnoreCase(lookFor);
-                                } catch (IllegalAccessException e) {
-                                    throw new RuntimeException(e);
-                                }
-                            })
-                            .collect(Collectors.toList());
-                    finalList.addAll(matchingCities);
-                } catch (IOException | NoSuchFieldException e) {
-                    throw new RuntimeException("Could not read country data", e);
-                }
+                List<City> matchingCities = theseCities.stream()
+                        .filter(x -> {
+                            try {
+                                Object value = field.get(x);
+                                return value != null && value.toString().equalsIgnoreCase(lookFor);
+                            } catch (IllegalAccessException e) {
+                                throw new RuntimeException(e);
+                            }
+                        })
+                        .collect(Collectors.toList());
+                finalList.addAll(matchingCities);
+            } catch (IOException | NoSuchFieldException e) {
+                throw new RuntimeException("Could not read country data", e);
             }
-        
+        }
+
         return finalList;
     }
 

@@ -1,37 +1,37 @@
 {
     "cortPrompts": [
         {
-            "index": 0,
+            "index": 1,
             "type": "continent",
             "lookFor": "Europe",
             "prompt": "Countries in Europe"
         },
          {
-            "index": 0,
+            "index": 1,
             "type": "continent",
             "lookFor": "Oceania",
             "prompt": "Countries in Oceania"
         },
          {
-            "index": 0,
+            "index": 1,
             "type": "continent",
             "lookFor": "NA",
             "prompt": "Countries in North America"
         },
          {
-            "index": 0,
+            "index": 1,
             "type": "continent",
             "lookFor": "Europe",
             "prompt": "Countries in South America"
         },
          {
-            "index": 0,
+            "index": 1,
             "type": "continent",
             "lookFor": "Asia",
             "prompt": "Countries in Asia"
         },
          {
-            "index": 0,
+            "index": 1,
             "type": "continent",
             "lookFor": "Africa",
             "prompt": "Countries in Africa"

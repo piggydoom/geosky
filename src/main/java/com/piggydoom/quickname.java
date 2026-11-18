@@ -1,12 +1,16 @@
 package com.piggydoom;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.stream.Collectors;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.piggydoom.home.City;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -56,7 +60,8 @@ public class quickname {
     private Button seeMissedAndGotToggleBtn;
 
     private static class prompt {
-        private Integer index;
+
+        private Integer mode;
         private String type;
         private String lookFor;
         private String pTitleText;
@@ -64,9 +69,9 @@ public class quickname {
         private prompt() {
         }
 
-        private prompt(Integer index, String type, String lookFor, String pTitleText) {
+        private prompt(Integer mode, String type, String lookFor, String pTitleText) {
 
-            this.index = index;
+            this.mode = mode;
             this.type = type;
             this.lookFor = lookFor;
             this.pTitleText = pTitleText;
@@ -79,6 +84,7 @@ public class quickname {
     int startTime = 30;
     int score;
     int time;
+    int viewPaneMaxCapacityNum = 10;
     boolean active = false;
     int mode = 1;
     int endViewMode = 1; // 1 = what was gotten, 2 = what was missed
@@ -106,14 +112,19 @@ public class quickname {
         // equal the exact value you are looking for as that JSON parameter
         // cityPrompts.add(new prompt(1, "continent", "Africa", "Cities in African
         // Countries"));
-        cityPrompts.add(new prompt(2, "continent", "Europe", "Cities in European Countries"));
-        cityPrompts.add(new prompt(3, "continent", "Asia", "Cities in Asian Countries"));
-        cityPrompts.add(new prompt(4, "continent", "NA", "Cities in North American Countries"));
-        cityPrompts.add(new prompt(5, "continent", "SA", "Cities in South American Countries"));
-        cityPrompts.add(new prompt(6, "continent", "Oceania", "Cities in Oceanian Countries"));
+        // cityPrompts.add(new prompt(0, "continent", "Europe", "Cities in European
+        // Countries"));
+        // cityPrompts.add(new prompt(0, "continent", "Asia", "Cities in Asian
+        // Countries"));
+        // cityPrompts.add(new prompt(0, "continent", "NA", "Cities in North American
+        // Countries"));
+        // cityPrompts.add(new prompt(0, "continent", "SA", "Cities in South American
+        // Countries"));
+        // cityPrompts.add(new prompt(0, "continent", "Oceania", "Cities in Oceanian
+        // Countries"));
         cityPrompts.add(new prompt(0, "country", "US", "Cities in the U.S.A"));
-        countryPrompts.add(new prompt(0, "continent", "Africa", "African Countries"));
-        countryPrompts.add(new prompt(0, "continent", "Asia", "Asian Countries"));
+        countryPrompts.add(new prompt(1, "continent", "Africa", "African Countries"));
+        countryPrompts.add(new prompt(1, "continent", "Asia", "Asian Countries"));
 
         changeWhenWrongAndRightNodes.add(beginRestartBtn);
         changeWhenWrongAndRightNodes.add(submitBtn);
@@ -129,17 +140,30 @@ public class quickname {
             }
         });
 
+        modeSel.setOnAction(event -> {
+            viewPane.getChildren().clear();
+            active = false;
+            time = 0;
+            promptLbl.setText(null);
+            inputField.setText(null);
+            timeLbl.setText(null);
+            scoreLbl.setText(null);
+            timeline.stop();
+            gotList.clear();
+        });
+
         seeMissedAndGotToggleBtn.setOnAction(event -> {
             if (endViewMode == 1) {
                 endViewMode = 2;
                 seeMissedAndGotToggleBtn.getStyleClass().add("buttonStyle2-1");
                 seeMissedAndGotToggleBtn.setText("See gotten");
+                writeMissed(selPrompt);
             } else {
                 endViewMode = 1;
                 seeMissedAndGotToggleBtn.getStyleClass().clear();
                 seeMissedAndGotToggleBtn.getStyleClass().add("buttonStyle2");
                 seeMissedAndGotToggleBtn.setText("See missed");
-
+                viewPane.getChildren().clear();
                 for (String got : gotList) {
                     Label insert = new Label(got);
                     insert.getStyleClass().add("generalBox2");
@@ -151,6 +175,10 @@ public class quickname {
 
         timeline.setCycleCount(startTime * 10);
 
+    }
+
+    private void getPrompt(String mode){
+        
     }
 
     private void beginOrRestart() {
@@ -185,8 +213,6 @@ public class quickname {
         viewPane.getChildren().add(insert);
     }
 
-    
-
     private void submitAns() {
 
         // IDEA for LATER-
@@ -197,13 +223,18 @@ public class quickname {
         if (!gotList.contains(inputField.getText().toLowerCase())) {
 
             // countries
-            if (modeSel.getValue().equals("Countries")) {
+            if (selPrompt.mode == 1) {
                 switch (selPrompt.type) {
                     case "continent":
                         try {
                             String submitted = (home.getCorTbyName(inputField.getText()).cont);
                         } catch (Exception e) {
-                            System.out.println("failed");
+                            try {
+                                String submitted = (home.getCorTbyName(inputField.getText()).cont);
+                            } catch (Exception e2) {
+
+                                System.out.println("failed");
+                            }
                         }
                         if ((home.getCorTbyName(inputField.getText()).cont).equals(selPrompt.lookFor)) {
                             insertAns();
@@ -212,13 +243,13 @@ public class quickname {
                         }
                 }
                 // cities
-            } else if (modeSel.getValue().equals("Cities")) {
+            } else if (selPrompt.mode == 0) {
                 switch (selPrompt.type) {
                     case "country":
                         try {
-                            String submit = (home.getCorTCityByName(inputField.getText(), "US").name);
+                            String submit = (home.getCorTCityByName(inputField.getText(), selPrompt.lookFor).name);
+                            // if this fails, try again but for all
                         } catch (Exception e) {
-                            System.out.println("failed");
                         }
                         if ((home.getCorTCityByName(inputField.getText(), "US")).country.equals(selPrompt.lookFor)) {
                             insertAns();
@@ -246,6 +277,29 @@ public class quickname {
             negativeResponse(3, null);
         }
 
+    }
+
+    private void writeMissed(prompt prompt) {
+        System.out.println("writeMissed triggered. mode " + prompt.mode + " | type " + prompt.type);
+        viewPane.getChildren().clear();
+        if (prompt.mode == 0) {
+            switch (prompt.type) {
+                case "country":
+                    List<home.City> totalAvailList = home.createCitySampleSpace("country", prompt.lookFor);
+                    System.out.println("total cities in " + prompt.lookFor + " = " + totalAvailList.size());
+                    viewPane.getChildren().clear();
+                    for (home.City i : totalAvailList) {
+                        if (!gotList.contains(i) && viewPane.getChildren().size() < viewPaneMaxCapacityNum) {
+                            Label missed = new Label(i.name.toUpperCase());
+                            missed.getStyleClass().add("generalBox2");
+                            viewPane.getChildren().add(missed);
+                        }
+                    }
+                    break;
+            }
+        } else if (prompt.mode == 1) {
+            System.out.println("CANNOT writeMissed() ||| MODE != 0 ||| SWAP TO CITIES MODE FOR PLAYTEST");
+        }
     }
 
     private void negativeResponse(Integer type, String response) {

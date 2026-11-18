@@ -85,6 +85,15 @@ Droid Serif */
     -fx-background-radius: 5px;
     -fx-font-family: "Gentium Book Basic";
 }
+.generalBox2-1 {
+    -fx-background-color: rgb(243, 227, 227);
+    -fx-border-width: 2px;
+    -fx-border-color: rgb(193, 155, 155);
+    -fx-border-radius: 5px;
+    -fx-padding: 2px;
+    -fx-background-radius: 5px;
+    -fx-font-family: "Gentium Book Basic";
+}
 
 .label2 {
     -fx-font-size: 25px;
