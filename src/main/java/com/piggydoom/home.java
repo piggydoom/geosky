@@ -6,6 +6,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Parameter;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -41,7 +42,28 @@ public class home {
     }
 
     public static final File countryData = new File("src\\main\\resources\\com\\piggydoom\\JSON\\countryData.json");
-    public static final File[] allCityFiles = new File("src\\main\\resources\\com\\piggydoom\\JSON\\cities").listFiles();
+    public static final File promptsJSON = new File("src\\main\\resources\\com\\piggydoom\\JSON\\prompts.json");
+    public static final File[] allCityFiles = new File("src\\main\\resources\\com\\piggydoom\\JSON\\cities")
+            .listFiles();
+
+    public static class Prompt {
+
+        public Integer mode;
+        public String type;
+        public String lookFor;
+        public String pText;
+
+        public Prompt() {
+        }
+
+        public Prompt(Integer mode, String type, String lookFor, String pText) {
+
+            this.mode = mode;
+            this.type = type;
+            this.lookFor = lookFor;
+            this.pText = pText;
+        }
+    }
 
     public static class CorT {
         public String index;
@@ -97,12 +119,14 @@ public class home {
         }
     }
 
+    public static ObservableList<Prompt> listPromptsCorT = FXCollections.observableArrayList();
+    public static ObservableList<Prompt> listPromptsCity = FXCollections.observableArrayList();
     public static ObservableList<CorT> totalCorTs = FXCollections.observableArrayList();
     public static ObservableList<CorT> t1CorTs = FXCollections.observableArrayList();
     public static ObservableList<CorT> t234CorTs = FXCollections.observableArrayList();
 
     public void initialize() {
-        // pre-sort JSON objs by type.
+        // pre-sort JSON CorTs by type.
         ObjectMapper mapper = new ObjectMapper();
         try {
             List<CorT> CorTJSON = mapper.readValue(countryData, new TypeReference<List<CorT>>() {
@@ -114,6 +138,23 @@ public class home {
                     t1CorTs.add(cort);
                 } else {
                     t234CorTs.add(cort);
+                }
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        // pre-sort JSON
+        try {
+            List<Prompt> promptJSON = mapper.readValue(promptsJSON, new TypeReference<List<Prompt>>() {
+            });
+
+            for (Prompt prompt : promptJSON) {
+                if (prompt.mode == 0) {
+                    listPromptsCity.add(prompt);
+                } else {
+                    listPromptsCorT.add(prompt);
                 }
             }
 
@@ -169,6 +210,13 @@ public class home {
         }
     }
 
+    private void getPrompt(String mode) {
+        if (mode.equalsIgnoreCase("Countries")) {
+
+        }
+        ;
+    }
+
     public static City getCorTCityByName(String name, String CorTIndex) {
         ObjectMapper objectMapper = new ObjectMapper();
 
@@ -201,7 +249,6 @@ public class home {
             throw new RuntimeException();
         }
 
-        
         System.out.println("allCityFiles" + allCityFiles.length);
         List<City> finalList = new ArrayList<>();
         ObjectMapper objectMapper = new ObjectMapper();

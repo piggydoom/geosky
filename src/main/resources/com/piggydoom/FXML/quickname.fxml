@@ -22,9 +22,9 @@
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" styleClass="background2">
          <children>
             <ImageView fx:id="flashcardsIV" fitHeight="245.0" fitWidth="379.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
-            <Button fx:id="beginRestartBtn" layoutX="532.0" layoutY="14.0" mnemonicParsing="false" styleClass="buttonStyle2" text="Begin" />
+            <Button fx:id="beginRestartBtn" layoutX="528.0" layoutY="20.0" mnemonicParsing="false" styleClass="buttonStyle2" text="Begin" />
             <TextField fx:id="inputField" layoutX="221.0" layoutY="259.0" promptText="Type Here" styleClass="input2" />
-            <Label fx:id="promptLbl" layoutX="274.0" layoutY="18.0" styleClass="label2" />
+            <Label fx:id="promptLbl" layoutX="133.0" layoutY="22.0" prefHeight="36.0" prefWidth="325.0" styleClass="label2" textAlignment="CENTER" wrapText="true" />
             <Label fx:id="timeLbl" layoutX="14.0" layoutY="18.0" styleClass="labelNumbers2" text="0" />
             <Button fx:id="submitBtn" layoutX="268.0" layoutY="288.0" mnemonicParsing="false" styleClass="buttonStyle2" text="Check" />
             <Label fx:id="scoreLbl" layoutX="332.0" layoutY="292.0" styleClass="labelNumbers2" text="0" />

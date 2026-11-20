@@ -2,6 +2,8 @@ package com.piggydoom;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -59,27 +61,10 @@ public class quickname {
     @FXML
     private Button seeMissedAndGotToggleBtn;
 
-    private static class prompt {
+   
 
-        private Integer mode;
-        private String type;
-        private String lookFor;
-        private String pTitleText;
-
-        private prompt() {
-        }
-
-        private prompt(Integer mode, String type, String lookFor, String pTitleText) {
-
-            this.mode = mode;
-            this.type = type;
-            this.lookFor = lookFor;
-            this.pTitleText = pTitleText;
-        }
-    }
-
-    List<prompt> cityPrompts = new ArrayList<>();
-    List<prompt> countryPrompts = new ArrayList<>();
+    // List<home.Prompt> cityPrompts = new ArrayList<>();
+    // List<home.Prompt> countryPrompts = new ArrayList<>();
     List<Node> changeWhenWrongAndRightNodes = new ArrayList();
     int startTime = 30;
     int score;
@@ -88,7 +73,7 @@ public class quickname {
     boolean active = false;
     int mode = 1;
     int endViewMode = 1; // 1 = what was gotten, 2 = what was missed
-    prompt selPrompt;
+    home.Prompt selPrompt;
     private ObservableList<String> sampleSpace = FXCollections.observableArrayList();
     private ObservableList<String> gotList = FXCollections.observableArrayList();
 
@@ -108,23 +93,7 @@ public class quickname {
         modeSel.setItems(FXCollections.observableArrayList("Countries", "Cities"));
         modeSel.setValue("Countries");
 
-        // "type" MUST match the JSON parameter you are looking at, and "lookFor" MUST
-        // equal the exact value you are looking for as that JSON parameter
-        // cityPrompts.add(new prompt(1, "continent", "Africa", "Cities in African
-        // Countries"));
-        // cityPrompts.add(new prompt(0, "continent", "Europe", "Cities in European
-        // Countries"));
-        // cityPrompts.add(new prompt(0, "continent", "Asia", "Cities in Asian
-        // Countries"));
-        // cityPrompts.add(new prompt(0, "continent", "NA", "Cities in North American
-        // Countries"));
-        // cityPrompts.add(new prompt(0, "continent", "SA", "Cities in South American
-        // Countries"));
-        // cityPrompts.add(new prompt(0, "continent", "Oceania", "Cities in Oceanian
-        // Countries"));
-        cityPrompts.add(new prompt(0, "country", "US", "Cities in the U.S.A"));
-        countryPrompts.add(new prompt(1, "continent", "Africa", "African Countries"));
-        countryPrompts.add(new prompt(1, "continent", "Asia", "Asian Countries"));
+     
 
         changeWhenWrongAndRightNodes.add(beginRestartBtn);
         changeWhenWrongAndRightNodes.add(submitBtn);
@@ -177,9 +146,7 @@ public class quickname {
 
     }
 
-    private void getPrompt(String mode){
-        
-    }
+   
 
     private void beginOrRestart() {
 
@@ -189,23 +156,29 @@ public class quickname {
 
         score = 0;
         if (modeSel.getValue().equals("Countries")) {
-            selPrompt = countryPrompts.get(rand.nextInt(countryPrompts.size()));
+            selPrompt = home.listPromptsCorT.get(rand.nextInt(home.listPromptsCorT.size()));
         } else if (modeSel.getValue().equals("Cities")) {
-            selPrompt = cityPrompts.get(rand.nextInt(cityPrompts.size()));
+            selPrompt = home.listPromptsCity.get(rand.nextInt(home.listPromptsCity.size()));
         }
 
-        promptLbl.setText(selPrompt.pTitleText);
+        promptLbl.setText(selPrompt.pText);
         failedLbl.setText(null);
-        System.out.println("MODE = " + modeSel.getValue() + "\n TITLE = " + selPrompt.pTitleText);
+        System.out.println("MODE = " + modeSel.getValue() + "\n TITLE = " + selPrompt.pText);
         time = startTime;
         timeline.play();
         seeMissedAndGotToggleBtn.setVisible(false);
         active = true;
+
+        submitBtn.getStyleClass().add("buttonStyle2");
+                for (Node i : changeWhenWrongAndRightNodes) {
+                    i.getStyleClass().add("buttonStyle2");
+                }
     }
 
     private void insertAns() {
         System.out.println("correct");
         time = 30;
+        timeLbl.setText(String.valueOf(time));
         gotList.add(inputField.getText().toLowerCase());
         scoreLbl.setText(String.valueOf(score += 1));
         Label insert = new Label(inputField.getText().toUpperCase());
@@ -279,7 +252,7 @@ public class quickname {
 
     }
 
-    private void writeMissed(prompt prompt) {
+    private void writeMissed(home.Prompt prompt) {
         System.out.println("writeMissed triggered. mode " + prompt.mode + " | type " + prompt.type);
         viewPane.getChildren().clear();
         if (prompt.mode == 0) {

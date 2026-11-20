@@ -1,60 +1,56 @@
-{
-    "cortPrompts": [
+[
         {
-            "index": 1,
+            "mode": 1,
             "type": "continent",
             "lookFor": "Europe",
-            "prompt": "Countries in Europe"
+            "pText": "Countries in Europe"
         },
          {
-            "index": 1,
+            "mode": 1,
             "type": "continent",
             "lookFor": "Oceania",
-            "prompt": "Countries in Oceania"
+            "pText": "Countries in Oceania"
         },
          {
-            "index": 1,
+            "mode": 1,
             "type": "continent",
             "lookFor": "NA",
-            "prompt": "Countries in North America"
+            "pText": "Countries in North America"
         },
          {
-            "index": 1,
+            "mode": 1,
             "type": "continent",
-            "lookFor": "Europe",
-            "prompt": "Countries in South America"
+            "lookFor": "SA",
+            "pText": "Countries in South America"
         },
          {
-            "index": 1,
+            "mode": 1,
             "type": "continent",
             "lookFor": "Asia",
-            "prompt": "Countries in Asia"
+            "pText": "Countries in Asia"
         },
          {
-            "index": 1,
+            "mode": 1,
             "type": "continent",
             "lookFor": "Africa",
-            "prompt": "Countries in Africa"
-        }
-    ],
-    "cityPrompts": [
-        {
-            "index": 0,
-            "type": "country",
-            "lookFor": "US",
-            "prompt": "Cities in the U.S.A"
+            "pText": "Countries in Africa"
         },
-        {
-            "index": 0,
-            "type": "country",
-            "lookFor": "US",
-            "prompt": "Cities in India"
-        },
-        {
-            "index": 0,
-            "type": "country",
-            "lookFor": "US",
-            "prompt": "Cities in China"
-        }
+            {
+        "mode": 0,
+        "type": "country",
+        "lookFor": "US",
+        "pText": "Cities in the U.S.A"
+    },
+    {
+        "mode": 0,
+        "type": "country",
+        "lookFor": "IN",
+        "pText": "Cities in India"
+    },
+    {
+        "mode": 0,
+        "type": "country",
+        "lookFor": "CN",
+        "pText": "Cities in China"
+    }
     ]
-}
